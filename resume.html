@@ -4,34 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رزومه امین جمالی - توسعه‌دهنده وب و کارشناس IT</title>
+    <title>رزومه امین جمالی - توسعه‌دهنده وب و متخصص IT</title>
 
     <!-- Google Fonts: Vazirmatn for premium Persian typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
     <style>
         /* CSS Reset & Variables */
         :root {
-            --primary: #0f172a;
-            /* Slate 900 */
-            --primary-light: #1e293b;
-            /* Slate 800 */
-            --accent: #0284c7;
-            /* Sky 600 */
-            --text-main: #334155;
-            /* Slate 700 */
-            --text-dark: #0f172a;
-            /* Slate 900 */
-            --text-muted: #64748b;
-            /* Slate 500 */
-            --bg-sidebar: #f8fafc;
-            /* Slate 50 */
+            --primary: #0f172a;       /* Slate 900 */
+            --primary-light: #1e293b; /* Slate 800 */
+            --accent: #0d9488;        /* Teal 600 */
+            --accent-hover: #0f766e;  /* Teal 700 */
+            --accent-light: #f0fdfa;  /* Teal 50 */
+            --text-main: #334155;     /* Slate 700 */
+            --text-dark: #0f172a;     /* Slate 900 */
+            --text-muted: #64748b;    /* Slate 500 */
+            --bg-sidebar: #f8fafc;    /* Slate 50 */
             --bg-body: #ffffff;
-            --border-color: #e2e8f0;
-            /* Slate 200 */
+            --border-color: #cbd5e1;  /* Slate 300 */
+            --border-light: #e2e8f0;  /* Slate 200 */
             --font-family: 'Vazirmatn', Tahoma, sans-serif;
         }
 
@@ -52,11 +46,11 @@
 
         /* Container Layout */
         .resume-container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 30px auto;
             background-color: var(--bg-body);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -64,7 +58,7 @@
 
         /* Header Style */
         header {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary) 0%, #1e1b4b 100%);
             color: #ffffff;
             padding: 40px;
             display: flex;
@@ -74,30 +68,19 @@
             position: relative;
         }
 
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 150px;
-            height: 4px;
-            background-color: #38bdf8;
-            /* Sky 400 */
-        }
-
         .header-info h1 {
             font-size: 32px;
             font-weight: 800;
             letter-spacing: -0.5px;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             color: #ffffff;
         }
 
         .header-info p {
-            font-size: 16px;
-            color: #93c5fd;
-            /* Blue 300 */
+            font-size: 15px;
+            color: #ccfbf1; /* Teal 100 */
             font-weight: 500;
+            line-height: 1.5;
         }
 
         .print-btn {
@@ -108,17 +91,18 @@
             font-family: var(--font-family);
             font-size: 14px;
             font-weight: 600;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 8px;
             transition: all 0.2s ease;
-            box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.2);
+            box-shadow: 0 4px 6px -1px rgba(13, 148, 136, 0.2);
+            white-space: nowrap;
         }
 
         .print-btn:hover {
-            background-color: #0369a1;
+            background-color: var(--accent-hover);
             transform: translateY(-1px);
         }
 
@@ -138,7 +122,7 @@
         /* Right Column (Sidebar) */
         .sidebar {
             background-color: var(--bg-sidebar);
-            border-left: 1px solid var(--border-color);
+            border-left: 1px solid var(--border-light);
             padding: 30px;
         }
 
@@ -147,15 +131,14 @@
             padding: 40px;
         }
 
-        /* Section Styling */
+        /* Section Title Styling */
         .section-title {
             font-size: 16px;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--primary);
-            text-transform: uppercase;
             margin-bottom: 20px;
             padding-bottom: 8px;
-            border-bottom: 2px solid var(--border-color);
+            border-bottom: 2px solid var(--border-light);
             display: flex;
             align-items: center;
             gap: 8px;
@@ -169,7 +152,7 @@
         }
 
         .sidebar-section {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .sidebar-section:last-child {
@@ -210,19 +193,36 @@
         }
 
         /* Skills Styling */
+        .skill-category {
+            margin-bottom: 18px;
+        }
+
+        .skill-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-cat-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 8px;
+            border-right: 3px solid var(--accent);
+            padding-right: 8px;
+        }
+
         .skills-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
         }
 
         .skill-badge {
             background-color: #ffffff;
             color: var(--text-main);
-            border: 1px solid var(--border-color);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
+            border: 1px solid var(--border-light);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 11px;
             font-weight: 500;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
             transition: all 0.2s ease;
@@ -230,7 +230,8 @@
 
         .skill-badge:hover {
             border-color: var(--accent);
-            color: var(--accent);
+            color: var(--accent-hover);
+            background-color: var(--accent-light);
         }
 
         /* Languages Styling */
@@ -247,14 +248,14 @@
         }
 
         .language-level {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-muted);
             margin-top: 2px;
         }
 
         .language-bar {
             height: 4px;
-            background-color: var(--border-color);
+            background-color: var(--border-light);
             border-radius: 2px;
             margin-top: 5px;
             overflow: hidden;
@@ -270,7 +271,7 @@
         .timeline {
             position: relative;
             padding-right: 20px;
-            border-right: 2px solid var(--border-color);
+            border-right: 2px solid var(--border-light);
             margin-bottom: 30px;
         }
 
@@ -301,6 +302,7 @@
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 5px;
+            gap: 15px;
         }
 
         .timeline-title {
@@ -312,12 +314,18 @@
         .timeline-company {
             font-size: 13px;
             font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 5px;
+            color: var(--accent-hover);
+            margin-bottom: 8px;
+        }
+
+        .timeline-type {
+            font-weight: normal;
+            color: var(--text-muted);
+            font-size: 11px;
         }
 
         .timeline-date {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-muted);
             font-weight: 500;
             white-space: nowrap;
@@ -327,23 +335,46 @@
         }
 
         .timeline-desc {
-            font-size: 13.5px;
+            font-size: 13px;
             color: var(--text-main);
             text-align: justify;
         }
 
+        .timeline-desc ul {
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .timeline-desc li {
+            position: relative;
+            padding-right: 15px;
+            margin-bottom: 6px;
+        }
+
+        .timeline-desc li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 14px;
+            position: absolute;
+            right: 0;
+            top: -2px;
+        }
+
         /* Projects Section styling */
         .project-card {
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 15px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 18px;
             margin-bottom: 15px;
             background-color: #ffffff;
-            transition: box-shadow 0.2s ease;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
         }
 
         .project-card:hover {
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-color: var(--accent);
         }
 
         .project-card:last-child {
@@ -354,41 +385,33 @@
             font-size: 15px;
             font-weight: 700;
             color: var(--text-dark);
-            margin-bottom: 3px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .project-meta {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            color: var(--text-muted);
             margin-bottom: 8px;
         }
 
         .project-desc {
             font-size: 13px;
             color: var(--text-main);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             text-align: justify;
+            line-height: 1.55;
         }
 
-        .project-link {
-            font-size: 12px;
-            color: var(--accent);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            direction: ltr;
+        .project-techs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
         }
 
-        .project-link:hover {
-            text-decoration: underline;
+        .tech-badge {
+            background-color: #f1f5f9;
+            color: var(--text-muted);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
         }
 
+        /* Certifications Grid */
         .cert-verification-note {
             background-color: #f0f9ff;
             border: 1px solid #bae6fd;
@@ -412,7 +435,7 @@
         }
 
         .cert-verification-note a {
-            color: var(--accent);
+            color: var(--accent-hover);
             font-weight: 700;
             text-decoration: none;
             direction: ltr;
@@ -423,36 +446,52 @@
             text-decoration: underline;
         }
 
-        /* Certifications Grid */
-        .cert-grid {
+        .cert-grid-new {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
         }
 
-        .cert-card {
-            background-color: #f8fafc;
-            border-right: 2px solid var(--accent);
-            padding: 8px 10px;
-            border-radius: 0 4px 4px 0;
-            font-size: 11px;
-            page-break-inside: avoid;
-            break-inside: avoid;
+        .cert-card-new {
+            background-color: var(--bg-sidebar);
+            border: 1px solid var(--border-light);
+            border-right: 3px solid var(--accent);
+            padding: 12px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
         }
 
-        .cert-name {
-            font-size: 11px;
+        .cert-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .cert-card-title {
+            font-size: 12px;
             font-weight: 700;
             color: var(--text-dark);
-            margin-bottom: 3px;
             line-height: 1.4;
         }
 
-        .cert-details {
+        .cert-card-date {
             font-size: 10px;
             color: var(--text-muted);
-            display: flex;
-            justify-content: space-between;
+            font-weight: 500;
+            white-space: nowrap;
+            background-color: #e2e8f0;
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+
+        .cert-card-body {
+            font-size: 11px;
+            color: var(--text-main);
+            line-height: 1.5;
+            text-align: justify;
         }
 
         /* Summary section */
@@ -460,14 +499,7 @@
             font-size: 13.5px;
             text-align: justify;
             margin-bottom: 25px;
-        }
-
-        .summary-text p {
-            margin-bottom: 10px;
-        }
-
-        .summary-text p:last-child {
-            margin-bottom: 0;
+            line-height: 1.65;
         }
 
         /* Responsive Layout for screens */
@@ -478,7 +510,7 @@
 
             .sidebar {
                 border-left: none;
-                border-bottom: 1px solid var(--border-color);
+                border-bottom: 1px solid var(--border-light);
             }
 
             header {
@@ -487,7 +519,7 @@
                 gap: 20px;
             }
 
-            .cert-grid {
+            .cert-grid-new {
                 grid-template-columns: 1fr;
             }
         }
@@ -497,8 +529,7 @@
             body {
                 background-color: #ffffff;
                 color: #000000;
-                font-size: 11.5px;
-                /* Scale down for print */
+                font-size: 11px;
             }
 
             .resume-container {
@@ -509,8 +540,8 @@
             }
 
             header {
-                padding: 20px;
-                background-color: #0f172a !important;
+                padding: 25px;
+                background: var(--primary) !important;
                 color: #ffffff !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
@@ -518,43 +549,48 @@
 
             header h1 {
                 color: #ffffff !important;
+                font-size: 24px;
+            }
+
+            header p {
+                color: #ccfbf1 !important;
+                font-size: 12px;
             }
 
             .print-btn {
                 display: none !important;
-                /* Hide print button when printing */
             }
 
             .main-grid {
                 display: grid;
                 grid-template-columns: 30% 70%;
-                /* Fixed split for printing */
                 min-height: auto;
             }
 
             .sidebar {
-                background-color: #f8fafc !important;
+                background-color: var(--bg-sidebar) !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
                 padding: 20px;
-                border-left: 1px solid #e2e8f0;
+                border-left: 1px solid var(--border-light);
             }
 
             .content-area {
-                padding: 25px;
+                padding: 20px;
             }
 
             .section-title {
                 margin-bottom: 12px;
-                color: #0f172a !important;
-                border-bottom-color: #cbd5e1;
+                color: var(--primary) !important;
+                border-bottom-color: var(--border-light);
+                font-size: 13px;
             }
 
             .skill-badge {
-                border-color: #cbd5e1 !important;
+                border-color: var(--border-light) !important;
                 background-color: #ffffff !important;
-                padding: 3px 8px;
-                font-size: 10px;
+                padding: 3px 6px;
+                font-size: 9px;
             }
 
             .timeline-date {
@@ -563,11 +599,47 @@
                 print-color-adjust: exact;
             }
 
-            /* Prevent page breaks inside critical sections */
+            .cert-grid-new {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .cert-card-new {
+                background-color: var(--bg-sidebar) !important;
+                border-color: var(--border-light) !important;
+                padding: 8px 10px;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .cert-card-title {
+                font-size: 10.5px;
+            }
+
+            .cert-card-body {
+                font-size: 9.5px;
+            }
+
+            .project-card {
+                padding: 10px 12px;
+            }
+
+            .project-desc {
+                font-size: 11px;
+                margin-bottom: 6px;
+            }
+
+            .tech-badge {
+                background-color: #f1f5f9 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                font-size: 9px;
+            }
+
             .sidebar-section,
             .timeline-item,
             .project-card,
-            .cert-card,
+            .cert-card-new,
             .summary-text {
                 page-break-inside: avoid;
                 break-inside: avoid;
@@ -575,7 +647,7 @@
 
             .cert-verification-note {
                 background-color: transparent !important;
-                border: 1px solid #cbd5e1 !important;
+                border: 1px solid var(--border-light) !important;
                 border-right: 3px solid var(--accent) !important;
                 padding: 6px 10px !important;
                 font-size: 10px !important;
@@ -586,14 +658,100 @@
             }
             
             .cert-verification-note a {
-                color: #0284c7 !important;
+                color: var(--accent-hover) !important;
                 font-weight: bold !important;
             }
 
-            /* Set A4 margins */
             @page {
                 size: A4;
-                margin: 1cm;
+                margin: 0.8cm;
+            }
+        }
+
+        /* Screen Styles for Compact Certification Grid */
+        .cert-compact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .cert-compact-card {
+            background-color: var(--bg-sidebar);
+            border: 1px solid var(--border-light);
+            border-right: 3px solid var(--accent);
+            padding: 8px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.01);
+        }
+
+        .cert-compact-card:hover {
+            border-color: var(--accent);
+            background-color: var(--accent-light);
+            transform: translateY(-1px);
+        }
+
+        .cert-compact-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+
+        .cert-compact-meta {
+            font-size: 9.5px;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Landscape Gallery for Screen (hidden) */
+        .print-cert-gallery {
+            display: none;
+        }
+
+        /* Print Layout for Landscape Certificates */
+        @media print {
+            .cert-compact-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 5px !important;
+            }
+
+            .cert-compact-card {
+                padding: 4px 6px !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .print-cert-gallery {
+                display: block !important;
+            }
+
+            .print-cert-page {
+                page-break-before: always;
+                break-before: page;
+                height: 100vh;
+                display: flex !important;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                padding: 20px;
+                background-color: #ffffff;
+            }
+
+            .print-cert-page img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+                display: block;
             }
         }
     </style>
@@ -606,12 +764,11 @@
         <header>
             <div class="header-info">
                 <h1>امین جمالی</h1>
-                <p>توسعه‌دهنده وب | متخصص سئو (SEO) و کارشناس فناوری اطلاعات (IT)</p>
+                <p>کارشناس ارشد فناوری اطلاعات (IT) | توسعه‌دهنده وب و متخصص راهکارهای هوش تجاری (BI) و داده‌های مالی</p>
             </div>
             <button class="print-btn" onclick="window.print()">
                 <svg viewBox="0 0 24 24">
-                    <path
-                        d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" />
+                    <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" />
                 </svg>
                 نسخه چاپی / خروجی PDF
             </button>
@@ -627,38 +784,38 @@
                 <div class="sidebar-section">
                     <h2 class="section-title">
                         <svg viewBox="0 0 24 24">
-                            <path
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
                         </svg>
                         اطلاعات تماس
                     </h2>
                     <ul class="contact-list">
                         <li class="contact-item">
                             <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                            </svg>
+                            <span>۲۵ خرداد ۱۳۷۹</span>
+                        </li>
+                        <li class="contact-item">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                             </svg>
                             <span>اصفهان، ایران</span>
                         </li>
                         <li class="contact-item">
                             <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                             </svg>
-                            <a href="mailto:amin.jamali.dev@gmail.com">amin.jamali.dev@gmail.com</a>
+                            <a href="mailto:aminjamali79@gmail.com">aminjamali79@gmail.com</a>
                         </li>
                         <li class="contact-item">
                             <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
                             </svg>
-                            <a href="https://linkedin.com/in/amin-jamali2000"
-                                target="_blank">linkedin.com/in/amin-jamali2000</a>
+                            <a href="https://linkedin.com/in/amin-jamali2000" target="_blank">linkedin.com/in/amin-jamali2000</a>
                         </li>
                         <li class="contact-item">
                             <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+                                <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
                             </svg>
                             <a href="https://github.com/BIGboss248" target="_blank">github.com/BIGboss248</a>
                         </li>
@@ -669,32 +826,61 @@
                 <div class="sidebar-section">
                     <h2 class="section-title">
                         <svg viewBox="0 0 24 24">
-                            <path
-                                d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.3C.5 6.7.9 9.8 2.9 11.8c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.6z" />
+                            <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.3C.5 6.7.9 9.8 2.9 11.8c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.6z" />
                         </svg>
-                        مهارت‌های کلیدی
+                        ماتریس مهارت‌ها
                     </h2>
-                    <div class="skills-container">
-                        <span class="skill-badge">توسعه نرم‌افزار</span>
-                        <span class="skill-badge">مدیریت فناوری اطلاعات (IT)</span>
-                        <span class="skill-badge">Next.js</span>
-                        <span class="skill-badge">ReactJS</span>
-                        <span class="skill-badge">TypeScript</span>
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge">Go (Golang)</span>
-                        <span class="skill-badge">سئو فروشگاهی (E-commerce SEO)</span>
-                        <span class="skill-badge">تحقیق کلمات کلیدی</span>
-                        <span class="skill-badge">طراحی رابط کاربری (Figma)</span>
-                        <span class="skill-badge">طراحی وب</span>
-                        <span class="skill-badge">تجارت الکترونیک</span>
-                        <span class="skill-badge">Docker & VPS</span>
-                        <span class="skill-badge">Git & GitHub</span>
-                        <span class="skill-badge">MongoDB & SQL</span>
-                        <span class="skill-badge">Tailwind CSS</span>
-                        <span class="skill-badge">شل اسکریپت (Shell)</span>
-                        <span class="skill-badge">لینوکس (Linux)</span>
-                        <span class="skill-badge">هوش مصنوعی (AI)</span>
-                        <span class="skill-badge">مهندسی پرامپت</span>
+                    
+                    <div class="skill-category">
+                        <h3 class="skill-cat-title">توسعه نرم‌افزار و فرانت‌اند</h3>
+                        <div class="skills-container">
+                            <span class="skill-badge">ReactJS</span>
+                            <span class="skill-badge">Next.js</span>
+                            <span class="skill-badge">TypeScript</span>
+                            <span class="skill-badge">Tailwind CSS</span>
+                            <span class="skill-badge">Flutter</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="skill-cat-title">اسکریپت‌نویسی و توسعه سرور</h3>
+                        <div class="skills-container">
+                            <span class="skill-badge">Python (Pandas)</span>
+                            <span class="skill-badge">Go (Golang)</span>
+                            <span class="skill-badge">Shell Scripting</span>
+                            <span class="skill-badge">REST APIs</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="skill-cat-title">مهندسی نرم‌افزار و دواپس</h3>
+                        <div class="skills-container">
+                            <span class="skill-badge">Docker</span>
+                            <span class="skill-badge">Containers</span>
+                            <span class="skill-badge">Linux</span>
+                            <span class="skill-badge">SQL</span>
+                            <span class="skill-badge">MongoDB</span>
+                            <span class="skill-badge">Firebase</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="skill-cat-title">ابزارهای هوش تجاری و تحلیل</h3>
+                        <div class="skills-container">
+                            <span class="skill-badge">Prompt Engineering</span>
+                            <span class="skill-badge">Generative AI</span>
+                            <span class="skill-badge">Tableau</span>
+                            <span class="skill-badge">Business Intelligence (BI)</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="skill-cat-title">بهینه‌سازی موتورهای جستجو</h3>
+                        <div class="skills-container">
+                            <span class="skill-badge">E-commerce SEO</span>
+                            <span class="skill-badge">Technical SEO Audit</span>
+                            <span class="skill-badge">Core Web Vitals</span>
+                        </div>
                     </div>
                 </div>
 
@@ -702,8 +888,7 @@
                 <div class="sidebar-section">
                     <h2 class="section-title">
                         <svg viewBox="0 0 24 24">
-                            <path
-                                d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.33-.14 2 0 .67.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56-.6 1.11-1.06 2.31-1.38 3.56zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.34-.16-2 0-.66.07-1.34.16-2h4.68c.09.66.16 1.34.16 2 0 .66-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.33.14-2 0-.67-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z" />
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.33-.14 2 0 .67.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56-.6 1.11-1.06 2.31-1.38 3.56zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.34-.16-2 0-.66.07-1.34.16-2h4.68c.09.66.16 1.34.16 2 0 .66-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.33.14-2 0-.67-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z" />
                         </svg>
                         زبان‌ها
                     </h2>
@@ -721,17 +906,17 @@
                     <div class="language-item">
                         <div class="language-name">
                             <span>انگلیسی</span>
-                            <span class="language-level">تسلط کامل حرفه‌ای</span>
+                            <span class="language-level">تسلط کامل حرفه‌ای و تخصصی</span>
                         </div>
                         <div class="language-bar">
-                            <div class="language-progress" style="width: 90%;"></div>
+                            <div class="language-progress" style="width: 95%;"></div>
                         </div>
                     </div>
 
                     <div class="language-item">
                         <div class="language-name">
                             <span>آلمانی</span>
-                            <span class="language-level">مقدماتی (Duolingo: 17)</span>
+                            <span class="language-level">سطح مقدماتی</span>
                         </div>
                         <div class="language-bar">
                             <div class="language-progress" style="width: 25%;"></div>
@@ -748,23 +933,12 @@
                 <section class="summary-text">
                     <h2 class="section-title">
                         <svg viewBox="0 0 24 24">
-                            <path
-                                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                         </svg>
-                        درباره من
+                        پروفایل تخصصی
                     </h2>
                     <p>
-                        من به عنوان تکنسین فناوری اطلاعات (IT) در شرکت بهار تجارت فعالیت می‌کنم، جایی که از نیازهای فنی
-                        عملیات و مشتریان پشتیبانی می‌کنم و با استفاده از مهارت‌های تحلیل داده و برنامه‌نویسی خود، به
-                        بهبود کارایی و کیفیت کمک می‌کنم. من دوره‌ها و گواهینامه‌های متعددی را در زمینه‌های پشتیبانی IT،
-                        امنیت و سیستم‌عامل‌ها به پایان رسانده‌ام که نشان‌دهنده تعهد من به یادگیری مستمر و توسعه حرفه‌ای
-                        است.
-                    </p>
-                    <p>
-                        من همچنین علاقه شدیدی به امور مالی و معامله‌گری دارم که باعث شد دوره کارشناسی خود را در رشته
-                        مدیریت مالی و خدمات مدیریت مالی در دانشگاه آزاد اسلامی دنبال کنم، در حالی که به عنوان معامله‌گر
-                        بازار فارکس فعالیت می‌کردم. من از مهارت‌های برنامه‌نویسی پایتون خود برای توسعه و تست
-                        استراتژی‌های معاملاتی و همچنین نظارت و بهینه‌سازی عملکرد بازار بهره می‌برم.
+                        متخصص چندبعدی و توسعه‌دهنده ارشد حوزه فناوری اطلاعات و نرم‌افزار با رویکرد حل مسئله و تفکر تحلیلگر میان‌رشته‌ای (فناوری و مالی). دارای بیش از ۴ سال تجربه در طراحی و تجاری‌سازی پلتفرم‌های تحت وب پیشرفته با اکوسیستم Next.js و TypeScript، اتوماسیون زیرساخت‌های سازمانی و تخصص عمیق در پیاده‌سازی سیستم‌های هوش تجاری (BI). تسلط بر ابزارهای نوین هوش مصنوعی مولد، تحلیل داده با Python (Pandas) و مفاهیم DevOps جهت بهینه‌سازی، ارتقای پایداری و مقیاس‌پذیری محصولات دانش‌بنیان و سیستم‌های صنعتی.
                     </p>
                 </section>
 
@@ -772,49 +946,51 @@
                 <section>
                     <h2 class="section-title">
                         <svg viewBox="0 0 24 24">
-                            <path
-                                d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
+                            <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
                         </svg>
-                        سوابق شغلی
+                        سوابق شغلی و تجارب صنعتی (R&D)
                     </h2>
                     <div class="timeline">
 
                         <div class="timeline-item">
                             <div class="timeline-header">
-                                <span class="timeline-title">توسعه‌دهنده برنامه‌های تحت وب</span>
+                                <span class="timeline-title">توسعه‌دهنده نرم‌افزارهای تحت وب و متخصص SEO</span>
                                 <span class="timeline-date">فروردین ۱۴۰۵ - اکنون</span>
                             </div>
-                            <div class="timeline-company">فریلنسر (Freelance)</div>
-                            <p class="timeline-desc">
-                                طراحی و توسعه نرم‌افزارهای تحت وب با کیفیت بالا، بهبود بهینه‌سازی موتورهای جستجو (SEO)،
-                                توسعه سیستم‌های فروشگاهی (E-commerce) و پیاده‌سازی سیستم‌های مدیریت محتوا (CMS) با
-                                استفاده از فناوری‌های مدرن نظیر NextJS و TypeScript.
-                            </p>
+                            <div class="timeline-company">فریلنسر (Freelance) <span class="timeline-type">| پاره‌وقت</span></div>
+                            <div class="timeline-desc">
+                                <ul>
+                                    <li><strong>تولید محصول و تجاری‌سازی:</strong> طراحی و توسعه نرم‌افزارهای تحت وب مقیاس‌پذیر و پلتفرم‌های مدرن تجارت الکترونیک با معماری تمیز.</li>
+                                    <li><strong>مهندسی عملکرد (Performance):</strong> پیاده‌سازی موفق فرآیندهای سئو فنی و ممیزی تخصصی کلمات کلیدی با تمرکز ویژه بر بهبود امتیازات Core Web Vitals برای افزایش ترافیک ارگانیک پلتفرم‌ها.</li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div class="timeline-item">
                             <div class="timeline-header">
-                                <span class="timeline-title">تکنسین فناوری اطلاعات (IT)</span>
+                                <span class="timeline-title">کارشناس فناوری اطلاعات (IT) و اتوماسیون</span>
                                 <span class="timeline-date">خرداد ۱۴۰۰ - اکنون</span>
                             </div>
-                            <div class="timeline-company">شرکت بهار تجارت (BaharTrade) - تمام‌وقت</div>
-                            <p class="timeline-desc">
-                                پشتیبانی از زیرساخت‌های شبکه و نیازهای فنی شرکت، اتوماسیون وظایف و مدیریت پایگاه داده‌ها
-                                با استفاده از SQL و شل اسکریپت‌نویسی، بهینه‌سازی اتصالات شبکه و پیاده‌سازی ابزارهای پایش
-                                و بهبود بازده فنی.
-                            </p>
+                            <div class="timeline-company">شرکت بهار تجارت (Bahar Trade) <span class="timeline-type">| تمام‌وقت</span></div>
+                            <div class="timeline-desc">
+                                <ul>
+                                    <li><strong>مهندسی زیرساخت:</strong> پشتیبانی، مدیریت و پایش (Monitoring) مستمر زیرساخت‌های شبکه و سیستم‌عامل‌های شرکت جهت ارتقای بازده فنی.</li>
+                                    <li><strong>اتوماسیون و مدیریت داده:</strong> کاهش فرآیندهای موازی و سنتی از طریق شل اسکریپت‌نویسی و مدیریت بهینه پایگاه داده‌های رابطه‌ای مبتنی بر SQL.</li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div class="timeline-item">
                             <div class="timeline-header">
-                                <span class="timeline-title">معامله‌گر بازار فارکس (Forex Trader)</span>
+                                <span class="timeline-title">تحلیلگر بازارهای مالی و معامله‌گر الگوریتمی</span>
                                 <span class="timeline-date">دی ۱۳۹۶ - دی ۱۳۹۷</span>
                             </div>
-                            <div class="timeline-company">خوداشتغال (Self-Employed) - پاره‌وقت</div>
-                            <p class="timeline-desc">
-                                تحلیل بازارهای مالی بین‌المللی و اجرای معاملات ارزی، بکارگیری برنامه‌نویسی پایتون برای
-                                تحلیل داده‌های بازار، تست استراتژی‌ها و پیاده‌سازی الگوریتم‌های معاملاتی.
-                            </p>
+                            <div class="timeline-company">خوداشتغال <span class="timeline-type">| پاره‌وقت</span></div>
+                            <div class="timeline-desc">
+                                <ul>
+                                    <li><strong>توسعه استراتژی‌های هوشمند:</strong> تحلیل کلان‌داده‌های مالی بین‌المللی و بکارگیری برنامه‌نویسی پایتون و کتابخانه Pandas جهت مدل‌سازی، تست استراتژی‌ها (Backtesting) و پیاده‌سازی الگوریتم‌های معاملاتی.</li>
+                                </ul>
+                            </div>
                         </div>
 
                     </div>
@@ -824,55 +1000,40 @@
                 <section style="margin-bottom: 30px;">
                     <h2 class="section-title">
                         <svg viewBox="0 0 24 24">
-                            <path
-                                d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+                            <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
                         </svg>
-                        پروژه‌های برجسته
+                        پروژه‌های شاخص فنی و صنعتی
                     </h2>
 
                     <div class="project-card">
                         <div class="project-title">
-                            <span>وب‌سایت قطعات یدکی ستایش (Setayesh Parts)</span>
-                            <span class="timeline-date">فروردین ۱۴۰۵ - اردیبهشت ۱۴۰۵</span>
+                            پلتفرم تجاری و فروشگاهی قطعات یدکی ستایش (Setayesh Parts)
                         </div>
                         <div class="project-desc">
-                            طراحی و توسعه وب‌سایت فروشگاهی پیشرفته قطعات یدکی خودرو با NextJS و Payload CMS. این پروژه
-                            شامل پیاده‌سازی کامل پروفایل‌های کاربری، مدیریت محصولات، سبد خرید و درگاه پرداخت است.
-                            استقرار پروژه با معماری Docker روی VPS شخصی، استفاده از ابزارهای CI/CD با گیت‌هاب اکشنز
-                            (GitHub Actions) و یکپارچه‌سازی با کلودفلر CDN برای سرعت و امنیت حداکثری و بهبود امتیازات
-                            Core Web Vitals و SEO انجام شده است.
+                            توسعه فرانت‌اند و بک‌اند با Next.js و Payload CMS شامل پروفایل کاربری و درگاه پرداخت. استقرار و معماری پروژه با Docker روی VPS شخصی، راه‌اندازی خط لوله CI/CD (GitHub Actions) و یکپارچه‌سازی با Cloudflare CDN جهت ارتقای سرعت، امنیت و پایداری محصول.
+                        </div>
+                        <div class="project-techs">
+                            <span class="tech-badge">Next.js</span>
+                            <span class="tech-badge">Payload CMS</span>
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">GitHub Actions</span>
+                            <span class="tech-badge">Cloudflare CDN</span>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-title">
-                            <span>وب‌سایت شرکت بهار تجارت (Bahar Trade Co)</span>
-                            <span class="timeline-date">اسفند ۱۴۰۴ - اردیبهشت ۱۴۰۵</span>
+                            وب‌سایت رسمی و سامانه محتوایی شرکت بهار تجارت (Bahar Trade Co)
                         </div>
                         <div class="project-desc">
-                            طراحی و توسعه وب‌سایت رسمی شرکت بهار تجارت با استفاده از NextJS. پیاده‌سازی کامل بخش وبلاگ و
-                            مدیریت محتوا با Payload CMS به صورت اختصاصی برای نمایش محصولات فولادی و اخبار صنعت.
+                            طراحی اختصاصی پلتفرم نمایش محصولات فولادی متصل به CMS پیشرفته با رویکرد بهینهسازی نرخ تبدیل و سئو.
                         </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-title">
-                            <span>اپلیکیشن یادداشت (Note App)</span>
-                            <span class="timeline-date">مهر ۱۴۰۴ - آذر ۱۴۰۴</span>
+                        <div class="project-techs">
+                            <span class="tech-badge">Next.js</span>
+                            <span class="tech-badge">Payload CMS</span>
+                            <span class="tech-badge">SEO Optimization</span>
+                            <span class="tech-badge">Conversion Rate</span>
                         </div>
-                        <div class="project-desc">
-                            اپلیکیشن موبایل مدیریت یادداشت‌ها و تسک‌ها توسعه داده شده با Flutter و Firebase برای یادگیری
-                            طراحی رابط کاربری اندروید، مدیریت پایگاه داده آنلاین و ارتباط کلاینت با سرور.
-                        </div>
-                        <a href="https://github.com/BIGboss248/flutter-currency-project" target="_blank"
-                            class="project-link">
-                            github.com/BIGboss248/flutter-currency-project
-                            <svg viewBox="0 0 24 24"
-                                style="width:12px; height:12px; fill:currentColor; transform: scaleX(-1);">
-                                <path
-                                    d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z" />
-                            </svg>
-                        </a>
                     </div>
                 </section>
 
@@ -882,53 +1043,36 @@
                         <svg viewBox="0 0 24 24">
                             <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
                         </svg>
-                        تحصیلات
+                        پیشینه آکادمیک و شاخص‌های استعدادهای درخشان
                     </h2>
                     <div class="timeline">
 
                         <div class="timeline-item">
                             <div class="timeline-header">
-                                <span class="timeline-title">کارشناسی مهندسی نرم‌افزار</span>
-                                <span class="timeline-date">مهر ۱۴۰۳ - خرداد ۱۴۰۵</span>
-                            </div>
-                            <div class="timeline-company">دانشگاه آزاد اسلامی - واحد خوراسگان</div>
-                            <p class="timeline-desc">
-                                متمرکز بر توسعه نرم‌افزار، پایگاه‌های داده، سیستم‌های تحت وب و اصول مهندسی نرم‌افزار.
-                            </p>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-header">
                                 <span class="timeline-title">کارشناسی مدیریت مالی و خدمات مدیریت مالی</span>
-                                <span class="timeline-date">دی ۱۴۰۰ - خرداد ۱۴۰۵</span>
                             </div>
-                            <div class="timeline-company">دانشگاه آزاد اسلامی - اصفهان</div>
+                            <div class="timeline-company">دانشگاه آزاد اسلامی اصفهان</div>
                             <p class="timeline-desc">
-                                متمرکز بر تحلیل‌های تجاری، مدیریت مالی و مدل‌سازی کسب‌وکار. مشارکت فعال در مرکز رشد
-                                دانشگاه با هدف پیوند دادن تخصص‌های فنی کامپیوتر با دانش تحلیل بازار و هوش تجاری (BI).
+                                <strong>شاخص کاربردی:</strong> مشارکت فعال در مرکز رشد دانشگاه با تمرکز بر تجاری‌سازی پروژه‌ها و پیوند تخصص‌های فنی کامپیوتر با دانش تحلیل بازار و راهکارهای هوش تجاری (BI).
                             </p>
                         </div>
 
                         <div class="timeline-item">
                             <div class="timeline-header">
-                                <span class="timeline-title">کاردانی مهندسی کامپیوتر</span>
-                                <span class="timeline-date">مهر ۱۳۹۷ - بهمن ۱۴۰۱</span>
+                                <span class="timeline-title">کارشناسی مهندسی کامپیوتر</span>
                             </div>
-                            <div class="timeline-company">دانشگاه اصفهان</div>
+                            <div class="timeline-company">دانشگاه آزاد</div>
                             <p class="timeline-desc">
-                                یادگیری مفاهیم پایه مهندسی کامپیوتر و ساختار سیستم‌ها. پس از اتمام مقطع کاردانی، با اتکا
-                                به خودآموزی مستمر و کار عملی، مهارت‌های کاربردی برنامه‌نویسی پایتون و سیستم‌های فناوری
-                                اطلاعات را ارتقا دادم.
+                                <strong>تخصص فنی:</strong> ساختار سیستم‌ها، شبکه‌ها و اتکای عمیق بر خودآموزی مستمر مهارتی در حوزه‌های برنامه‌نویسی پایتون و سیستم‌های جامع فناوری اطلاعات.
                             </p>
                         </div>
 
                         <div class="timeline-item">
                             <div class="timeline-header">
                                 <span class="timeline-title">دیپلم علوم ریاضی و فیزیک</span>
-                                <span class="timeline-date">مهر ۱۳۹۱ - خرداد ۱۳۹۷</span>
+                                <span class="timeline-date">۱۳۹۱ - ۱۳۹۷</span>
                             </div>
-                            <div class="timeline-company">سازمان ملی پرورش استعدادهای درخشان (سمپاد) - دبیرستان اژه‌ای
-                            </div>
+                            <div class="timeline-company">سازمان ملی پرورش استعدادهای درخشان (سمپاد) - دبیرستان اژه‌ای اصفهان</div>
                         </div>
 
                     </div>
@@ -938,444 +1082,652 @@
                 <section>
                     <h2 class="section-title">
                         <svg viewBox="0 0 24 24">
-                            <path
-                                d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-6V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-6V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
                         </svg>
-                        دوره‌ها و گواهینامه‌های معتبر
+                        گواهینامه‌های بین‌المللی و دوره‌های تخصصی مهارتی
                     </h2>
                     <div class="cert-verification-note">
                         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
                         <span>تأیید اعتبار و بررسی تمامی گواهینامه‌ها در لینکدین:</span>
                         <a href="https://www.linkedin.com/in/amin-jamali2000/details/certifications/" target="_blank">linkedin.com/in/amin-jamali2000/details/certifications/</a>
                     </div>
-                    <div class="cert-grid">
-
-                        <!-- گروه ۱: هوش مصنوعی و بهینه‌سازی پرامپت (گوگل و کورسرا - اردیبهشت ۱۴۰۵) -->
-                        <div class="cert-card">
-                            <div class="cert-name">بهینه‌سازی محتوا و پرامپت با هوش مصنوعی مولد</div>
-                            <div class="cert-details">
+                    
+                    <div class="cert-compact-grid">
+                        <a href="https://www.coursera.org/account/accomplishments/records/UEWQTEUE2842" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Generative AI Content and Prompt Optimization</span>
+                            <span class="cert-compact-meta">
                                 <span>Coursera</span>
-                                <span>اردیبهشت ۱۴۰۵</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">دید سئو، تحقیق کلمات کلیدی و ممیزی سئو</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>اردیبهشت ۱۴۰۵</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">تخصص هوش مصنوعی گوگل (Google AI)</div>
-                            <div class="cert-details">
-                                <span>Google</span>
-                                <span>اردیبهشت ۱۴۰۵</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">هوش مصنوعی برای ساخت اپلیکیشن (AI for App Building)</div>
-                            <div class="cert-details">
-                                <span>Google</span>
-                                <span>اردیبهشت ۱۴۰۵</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">هوش مصنوعی برای تحلیل داده‌ها (AI for Data Analysis)</div>
-                            <div class="cert-details">
-                                <span>Google</span>
-                                <span>اردیبهشت ۱۴۰۵</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">هوش مصنوعی برای تولید محتوا (AI for Content Creation)</div>
-                            <div class="cert-details">
-                                <span>Google</span>
-                                <span>اردیبهشت ۱۴۰۵</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">هوش مصنوعی برای نگارش و ارتباطات</div>
-                            <div class="cert-details">
-                                <span>Google</span>
-                                <span>اردیبهشت ۱۴۰۵</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">هوش مصنوعی برای تحقیق و بینش (AI for Research)</div>
-                            <div class="cert-details">
-                                <span>Google</span>
-                                <span>اردیبهشت ۱۴۰۵</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">هوش مصنوعی برای ایده‌پردازی و برنامه‌ریزی</div>
-                            <div class="cert-details">
-                                <span>Google</span>
-                                <span>اردیبهشت ۱۴۰۵</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">مبانی هوش مصنوعی (AI Fundamentals)</div>
-                            <div class="cert-details">
-                                <span>Google</span>
-                                <span>اردیبهشت ۱۴۰۵</span>
-                            </div>
-                        </div>
+                                <span>مه ۲۰۲۶</span>
+                            </span>
+                        </a>
 
-                        <!-- گروه ۲: توسعه وب مدرن (ورسل - آذر ۱۴۰۴) -->
-                        <div class="cert-card">
-                            <div class="cert-name">مبانی React برای Next.js (React Foundations)</div>
-                            <div class="cert-details">
+                        <a href="https://www.coursera.org/account/accomplishments/records/83NC0S61PC0E" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">SEO Visibility, Keyword Research, and Auditing</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>مه ۲۰۲۶</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/S8L0GL26QTKS" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Google AI</span>
+                            <span class="cert-compact-meta">
+                                <span>Google</span>
+                                <span>مه ۲۰۲۶</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/records/R1N3O195Z76B" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">AI for App Building</span>
+                            <span class="cert-compact-meta">
+                                <span>Google</span>
+                                <span>مه ۲۰۲۶</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/records/WTT2RJLVAASB" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">AI for Data Analysis</span>
+                            <span class="cert-compact-meta">
+                                <span>Google</span>
+                                <span>مه ۲۰۲۶</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/records/96YZD7VKYTTT" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">AI for Content Creation</span>
+                            <span class="cert-compact-meta">
+                                <span>Google</span>
+                                <span>مه ۲۰۲۶</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/records/NJ9VBWE3DYGQ" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">AI for Writing and Communicating</span>
+                            <span class="cert-compact-meta">
+                                <span>Google</span>
+                                <span>مه ۲۰۲۶</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/records/DCAODHSTDA5I" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">AI for Research and Insights</span>
+                            <span class="cert-compact-meta">
+                                <span>Google</span>
+                                <span>مه ۲۰۲۶</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/records/DZ8AK5RKTUPB" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">AI for Brainstorming and Planning</span>
+                            <span class="cert-compact-meta">
+                                <span>Google</span>
+                                <span>مه ۲۰۲۶</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/records/2NPALF7L4YWA" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">AI Fundamentals</span>
+                            <span class="cert-compact-meta">
+                                <span>Google</span>
+                                <span>مه ۲۰۲۶</span>
+                            </span>
+                        </a>
+
+                        <a href="https://nextjs.org/learn/certificate?course=react-foundations&user=129616&certId=react-foundations-129616-1767122629221" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">React Foundations for Next.js</span>
+                            <span class="cert-compact-meta">
                                 <span>Vercel</span>
-                                <span>آذر ۱۴۰۴</span>
-                            </div>
-                        </div>
+                                <span>دسامبر ۲۰۲۵</span>
+                            </span>
+                        </a>
 
-                        <!-- گروه ۳: مبانی چابک و دواپس (آی‌بی‌ام - آبان ۱۴۰۴) -->
-                        <div class="cert-card">
-                            <div class="cert-name">تخصص مبانی DevOps، ابری و چابک IBM</div>
-                            <div class="cert-details">
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/P7LAPJE2DQAQ" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">IBM DevOps, Cloud, and Agile Foundations Specialization</span>
+                            <span class="cert-compact-meta">
                                 <span>IBM</span>
-                                <span>آبان ۱۴۰۴</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">مقدمه‌ای بر کانتینرها با Docker، Kubernetes و OpenShift</div>
-                            <div class="cert-details">
-                                <span>IBM</span>
-                                <span>آبان ۱۴۰۴</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">مقدمه‌ای بر توسعه چابک (Agile) و اسکرام</div>
-                            <div class="cert-details">
-                                <span>IBM</span>
-                                <span>آبان ۱۴۰۴</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">مقدمه‌ای بر دواپس (Introduction to DevOps)</div>
-                            <div class="cert-details">
-                                <span>IBM</span>
-                                <span>آبان ۱۴۰۴</span>
-                            </div>
-                        </div>
+                                <span>نوامبر ۲۰۲۵</span>
+                            </span>
+                        </a>
 
-                        <!-- گروه ۴: یادگیری ماشین (دیپ‌لرنینگ و استنفورد - دی ۱۴۰۲) -->
-                        <div class="cert-card">
-                            <div class="cert-name">یادگیری ماشین نظارت‌شده (Regression & Classification)</div>
-                            <div class="cert-details">
-                                <span>DeepLearning.AI</span>
-                                <span>دی ۱۴۰۲</span>
-                            </div>
-                        </div>
+                        <a href="https://www.coursera.org/account/accomplishments/records/ZES3C4RAN009" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Introduction to Containers w/ Docker, Kubernetes & OpenShift</span>
+                            <span class="cert-compact-meta">
+                                <span>IBM</span>
+                                <span>نوامبر ۲۰۲۵</span>
+                            </span>
+                        </a>
 
-                        <!-- گروه ۵: خدمات ابری آمازون (آمازون - مهر تا آذر ۱۴۰۲) -->
-                        <div class="cert-card">
-                            <div class="cert-name">AWS Cloud Quest: Machine Learning</div>
-                            <div class="cert-details">
-                                <span>AWS</span>
-                                <span>آذر ۱۴۰۲</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">AWS Cloud Quest: Data Analytics</div>
-                            <div class="cert-details">
-                                <span>AWS</span>
-                                <span>آذر ۱۴۰۲</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">AWS Cloud Quest: Serverless Developer</div>
-                            <div class="cert-details">
-                                <span>AWS</span>
-                                <span>آبان ۱۴۰۲</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">AWS Cloud Quest: Solutions Architect</div>
-                            <div class="cert-details">
-                                <span>AWS</span>
-                                <span>مهر ۱۴۰۲</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">AWS Cloud Quest: Cloud Practitioner</div>
-                            <div class="cert-details">
-                                <span>AWS</span>
-                                <span>مهر ۱۴۰۲</span>
-                            </div>
-                        </div>
+                        <a href="https://www.coursera.org/account/accomplishments/records/2RUFQPULJS8Z" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Introduction to Agile Development and Scrum</span>
+                            <span class="cert-compact-meta">
+                                <span>IBM</span>
+                                <span>نوامبر ۲۰۲۵</span>
+                            </span>
+                        </a>
 
-                        <!-- گروه ۶: مهارت‌های تحلیل و توسعه (لینکدین - مرداد ۱۴۰۲) -->
-                        <div class="cert-card">
-                            <div class="cert-name">آموزش کار با REST APIها (Learning REST APIs)</div>
-                            <div class="cert-details">
+                        <a href="https://www.coursera.org/account/accomplishments/records/UR85P2JAJLKI" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Introduction to DevOps</span>
+                            <span class="cert-compact-meta">
+                                <span>IBM</span>
+                                <span>نوامبر ۲۰۲۵</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/records/ZGNUM46MBPM4" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Supervised Machine Learning: Regression and Classification</span>
+                            <span class="cert-compact-meta">
+                                <span>DeepLearning.AI, Stanford University</span>
+                                <span>ژانویه ۲۰۲۴</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.credly.com/badges/e6ce9bf0-121e-49af-b29a-53d7d5390651/linked_in_profile" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">AWS Cloud Quest: Machine Learning</span>
+                            <span class="cert-compact-meta">
+                                <span>Amazon Web Services (AWS)</span>
+                                <span>دسامبر ۲۰۲۳</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.credly.com/badges/a85ef716-33c2-4bb4-ae1a-22911bb4e95b/linked_in_profile" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">AWS Cloud Quest: Data Analytics</span>
+                            <span class="cert-compact-meta">
+                                <span>Amazon Web Services (AWS)</span>
+                                <span>دسامبر ۲۰۲۳</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.credly.com/badges/70ad0582-c168-46ed-8f68-2a9a0a3e8a15/linked_in_profile" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">AWS Cloud Quest: Serverless Developer</span>
+                            <span class="cert-compact-meta">
+                                <span>Amazon Web Services (AWS)</span>
+                                <span>نوامبر ۲۰۲۳</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.credly.com/badges/a5ac46a3-cb05-4b32-b893-17730a7f54e6/linked_in_profile" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">AWS Cloud Quest: Solutions Architect</span>
+                            <span class="cert-compact-meta">
+                                <span>Amazon Web Services (AWS)</span>
+                                <span>اکتبر ۲۰۲۳</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.credly.com/badges/bba4a0b4-0cac-4010-8151-7d0e9091d742/linked_in_profile" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">AWS Cloud Quest: Cloud Practitioner</span>
+                            <span class="cert-compact-meta">
+                                <span>Amazon Web Services (AWS)</span>
+                                <span>اکتبر ۲۰۲۳</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.linkedin.com/learning/certificates/ee34dbf89781499e1bdec5630d5a73577471df517a91822314d75a905fddccde/" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Learning REST APIs</span>
+                            <span class="cert-compact-meta">
                                 <span>LinkedIn</span>
-                                <span>مرداد ۱۴۰۲</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">مبانی بازاریابی دیجیتال (Digital Marketing)</div>
-                            <div class="cert-details">
-                                <span>LinkedIn</span>
-                                <span>مرداد ۱۴۰۲</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">تحلیل کسب‌وکار چیست؟ (Business Analysis)</div>
-                            <div class="cert-details">
-                                <span>LinkedIn</span>
-                                <span>مرداد ۱۴۰۲</span>
-                            </div>
-                        </div>
+                                <span>اوت ۲۰۲۳</span>
+                            </span>
+                        </a>
 
-                        <!-- گروه ۷: مبانی علم داده و ابر (کورسرا - مرداد تا آبان ۱۴۰۱) -->
-                        <div class="cert-card">
-                            <div class="cert-name">تخصص فناوری‌های کلیدی برای کسب‌وکار</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>مرداد ۱۴۰۲</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">علم داده چیست؟ (What is Data Science?)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>مرداد ۱۴۰۲</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">مقدمه‌ای بر هوش مصنوعی (Introduction to AI)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>مرداد ۱۴۰۲</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">مقدمه‌ای بر رایانش ابری (Cloud Computing)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>مرداد ۱۴۰۲</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">مدیریت پایگاه داده‌های رابطه‌ای (Relational DBA)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>آبان ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">پروژه پایتون برای مهندسی داده (Python Project)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>شهریور ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">مقدمه‌ای بر پایگاه داده‌های رابطه‌ای (RDBMS)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>شهریور ۱۴۰۱</span>
-                            </div>
-                        </div>
+                        <a href="https://www.linkedin.com/learning/certificates/126f8a1ed9262d8ef3bdfca1667d8827972c1ad521090e85876ae957d7fc96b0/" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Digital Marketing Foundations</span>
+                            <span class="cert-compact-meta">
+                                <span>LinkedIn</span>
+                                <span>اوت ۲۰۲۳</span>
+                            </span>
+                        </a>
 
-                        <!-- گروه ۸: اتوماسیون (یودمی - مرداد ۱۴۰۱) -->
-                        <div class="cert-card">
-                            <div class="cert-name">اتوماسیون کارهای روزمره با پایتون (Automate with Python)</div>
-                            <div class="cert-details">
+                        <a href="https://www.linkedin.com/learning/certificates/1daafdea8be11d1ce5fb8d186103d03bcef74940750e20a5ce15f3fa63c076c8/" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">What Is Business Analysis?</span>
+                            <span class="cert-compact-meta">
+                                <span>LinkedIn</span>
+                                <span>اوت ۲۰۲۳</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/G66N9B7XBGQA" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Key Technologies for Business Specialization</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>اوت ۲۰۲۳</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/ZF24W6KQYHLB" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">What is Data Science?</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>اوت ۲۰۲۳</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/MHVBPY9VZKDB" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Introduction to Artificial Intelligence (AI)</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>اوت ۲۰۲۳</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/A755TMZHG8QY" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Introduction to Cloud Computing</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>اوت ۲۰۲۳</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/SGZMGSSAZL3J" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Relational Database Administration (DBA)</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>نوامبر ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/TBG7SDBKA9ZT" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Python Project for Data Engineering</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>سپتامبر ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/QP75AYTQW6XP" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Introduction to Relational Databases (RDBMS)</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>سپتامبر ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.udemy.com/certificate/UC-dfed7e28-ac19-437e-9607-37e7d0f4a475/" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Automate your Life with python</span>
+                            <span class="cert-compact-meta">
                                 <span>Udemy</span>
-                                <span>مرداد ۱۴۰۱</span>
-                            </div>
-                        </div>
+                                <span>اوت ۲۰۲۲</span>
+                            </span>
+                        </a>
 
-                        <!-- گروه ۹: تخصص مهندسی داده (کورسرا - تیر ۱۴۰۱) -->
-                        <div class="cert-card">
-                            <div class="cert-name">تخصص ملزومات پایتون، بش و SQL برای مهندسی داده</div>
-                            <div class="cert-details">
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/HERDBP7JTHAK" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Python, Bash and SQL Essentials for Data Engineering Specialization</span>
+                            <span class="cert-compact-meta">
                                 <span>Coursera</span>
-                                <span>تیر ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">برنامه‌های تحت وب و ابزارهای خط فرمان برای مهندسی داده</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>تیر ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">لینوکس و بش برای مهندسی داده (Linux & Bash)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>تیر ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">پایتون و کتابخانه Pandas برای مهندسی داده</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>تیر ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">اسکریپت‌نویسی با پایتون و SQL برای مهندسی داده</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>تیر ۱۴۰۱</span>
-                            </div>
-                        </div>
+                                <span>ژوئیه ۲۰۲۲</span>
+                            </span>
+                        </a>
 
-                        <!-- گروه ۱۰: تخصص تحلیل داده گوگل (کورسرا - فروردین تا تیر ۱۴۰۱) -->
-                        <div class="cert-card">
-                            <div class="cert-name">تخصص تحلیل داده گوگل (Google Data Analytics)</div>
-                            <div class="cert-details">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/ZTJ5CHXMNDEE" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Web Applications and Command-Line Tools for Data Engineering</span>
+                            <span class="cert-compact-meta">
                                 <span>Coursera</span>
-                                <span>تیر ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">گواهینامه تحلیل داده گوگل (Google Data Analytics Certificate)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>تیر ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">پروژه نهایی تحلیل داده گوگل (Capstone Project)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>تیر ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">تحلیل داده‌ها با برنامه‌نویسی R (Data Analysis with R)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>تیر ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">اشتراک‌گذاری داده‌ها از طریق هنر تصویرسازی (Tableau)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>خرداد ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">پاک‌سازی داده‌ها برای تحلیل (Process Data)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>خرداد ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">آماده‌سازی داده‌ها برای کاوش (Prepare Data for Exploration)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>اردیبهشت ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">تحلیل داده‌ها برای پاسخ به سوالات (Analyze Data)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>تیر ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">طرح سوال برای اتخاذ تصمیمات داده‌محور (Ask Questions)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>فروردین ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">مبانی: داده‌ها، داده‌ها، همه‌جا (Foundations: Data)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>فروردین ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">پایتون برای علم داده، هوش مصنوعی و توسعه</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>فروردین ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">بررسی اجمالی فروش و مدیریت ارتباط با مشتری (CRM)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>تیر ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">مبانی پشتیبانی فنی کامپیوتر (Technical Support)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>فروردین ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">مقدمه‌ای بر مهندسی داده (Introduction to Data Engineering)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>مهر ۱۴۰۰</span>
-                            </div>
-                        </div>
+                                <span>ژوئیه ۲۰۲۲</span>
+                            </span>
+                        </a>
 
-                        <!-- گروه ۱۱: تخصص پشتیبانی فنی IT گوگل (کورسرا - فروردین ۱۴۰۱) -->
-                        <div class="cert-card">
-                            <div class="cert-name">تخصص پشتیبانی فنی IT گوگل (Google IT Support)</div>
-                            <div class="cert-details">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/3QL5TLJ6J7FD" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Linux and Bash for Data Engineering</span>
+                            <span class="cert-compact-meta">
                                 <span>Coursera</span>
-                                <span>فروردین ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">امنیت IT: دفاع در برابر تاریکی دیجیتال (IT Security)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>فروردین ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">مدیریت سیستم‌ها و خدمات زیرساخت IT</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>فروردین ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">سیستم‌عامل‌ها و شما: تبدیل شدن به کاربر حرفه‌ای</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>فروردین ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">شبکه‌های کامپیوتری: بیت‌ها و بایت‌ها (Networking)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>فروردین ۱۴۰۱</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-name">دوره فشرده برنامه‌نویسی پایتون (Crash Course on Python)</div>
-                            <div class="cert-details">
-                                <span>Coursera</span>
-                                <span>فروردین ۱۴۰۱</span>
-                            </div>
-                        </div>
+                                <span>ژوئیه ۲۰۲۲</span>
+                            </span>
+                        </a>
 
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/ZDBQUK7A4SSJ" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Python and Pandas for Data Engineering</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>ژوئیه ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/9S2RA3SE9NVP" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Scripting with Python and SQL for Data Engineering</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>ژوئیه ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/6VVRS6Q2EMLH" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Google Data Analytics Specialization</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>ژوئیه ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/ACYH2BZDEZZL" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Google IT Support Specialization</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>آوریل ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/UT7VAV9LW46M" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Sales and CRM Overview</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>ژوئیه ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/NPN2JEVT9NLS" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Data Analysis with R Programming</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>ژوئیه ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/RFL4ERR2XUFS" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Google Data Analytics Capstone: Complete a Case Study</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>ژوئیه ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.credly.com/badges/5028151e-5f1d-4ab9-91b8-b9df23b150f7" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Google Data Analytics Certificate</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>ژوئیه ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/H39YVJ9RCUDF" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Analyze Data to Answer Questions</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>ژوئیه ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/GAZQXQQD46WA" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Process Data from Dirty to Clean</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>ژوئن ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/TGJD7SCEFH5F" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Share Data Through the Art of Visualization</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>ژوئن ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/XWPDTW9E3SMA" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Prepare Data for Exploration</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>مه ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/2PLZWJA6MHKH" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Ask Questions to Make Data-Driven Decisions</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>آوریل ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/SSG3FVLQ9B7V" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Foundations: Data, Data, Everywhere</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>آوریل ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/5TTU7W6LEJNV" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Technical Support Fundamentals</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>آوریل ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/2HAVGXSCLUSJ" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Python for Data Science, AI & Development</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>آوریل ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/AD7M3DFN4EKW" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Introduction to Data Engineering</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>اکتبر ۲۰۲۱</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/BDY6UBJERGNP" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Crash Course on Python</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>آوریل ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/TFGWEPCX7F7N" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">The Bits and Bytes of Computer Networking</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>آوریل ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/SSAQBK2V274S" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">System Administration and IT Infrastructure Services</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>آوریل ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/LB42XRZQ6F92" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Operating Systems and You: Becoming a Power User</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>آوریل ۲۰۲۲</span>
+                            </span>
+                        </a>
+
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/4QSW3ZJB638G" target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">IT Security: Defense against the digital dark arts</span>
+                            <span class="cert-compact-meta">
+                                <span>Coursera</span>
+                                <span>آوریل ۲۰۲۲</span>
+                            </span>
+                        </a>
                     </div>
                 </section>
 
             </main>
 
+        </div>
+    </div>
+
+    <!-- Landscape Certificate Gallery (Print-only) -->
+    <div class="print-cert-gallery">
+        <div class="print-cert-page">
+            <img src="certs/generative_ai_content_and_prompt_optimization.jpeg" alt="Generative AI Content and Prompt Optimization">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/seo_visibility_keyword_research_and_auditing.jpeg" alt="SEO Visibility, Keyword Research, and Auditing">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/google_ai.png" alt="Google AI">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/ai_for_app_building.jpeg" alt="AI for App Building">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/ai_for_data_analysis.jpeg" alt="AI for Data Analysis">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/ai_for_content_creation.jpeg" alt="AI for Content Creation">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/ai_for_writing_and_communicating.jpeg" alt="AI for Writing and Communicating">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/ai_for_research_and_insights.jpeg" alt="AI for Research and Insights">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/ai_for_brainstorming_and_planning.jpeg" alt="AI for Brainstorming and Planning">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/ai_fundamentals.jpeg" alt="AI Fundamentals">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/react_foundations_for_nextjs.png" alt="React Foundations for Next.js">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/ibm_devops_cloud_and_agile_foundations_specialization.png" alt="IBM DevOps, Cloud, and Agile Foundations Specialization">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/introduction_to_containers_w_docker_kubernetes_openshift.png" alt="Introduction to Containers w/ Docker, Kubernetes & OpenShift">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/introduction_to_agile_development_and_scrum.jpeg" alt="Introduction to Agile Development and Scrum">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/introduction_to_devops.jpeg" alt="Introduction to DevOps">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/supervised_machine_learning_regression_and_classification.jpeg" alt="Supervised Machine Learning: Regression and Classification">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/aws_cloud_quest_machine_learning.png" alt="AWS Cloud Quest: Machine Learning">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/aws_cloud_quest_data_analytics.png" alt="AWS Cloud Quest: Data Analytics">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/aws_cloud_quest_serverless_developer.png" alt="AWS Cloud Quest: Serverless Developer">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/aws_cloud_quest_solutions_architect.png" alt="AWS Cloud Quest: Solutions Architect">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/aws_cloud_quest_cloud_practitioner.png" alt="AWS Cloud Quest: Cloud Practitioner">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/learning_rest_apis.jpeg" alt="Learning REST APIs">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/digital_marketing_foundations.jpeg" alt="Digital Marketing Foundations">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/what_is_business_analysis.jpeg" alt="What Is Business Analysis?">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/key_technologies_for_business_specialization.jpeg" alt="Key Technologies for Business Specialization">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/what_is_data_science.png" alt="What is Data Science?">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/introduction_to_artificial_intelligence_ai.png" alt="Introduction to Artificial Intelligence (AI)">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/introduction_to_cloud_computing.png" alt="Introduction to Cloud Computing">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/relational_database_administration_dba.png" alt="Relational Database Administration (DBA)">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/python_project_for_data_engineering.png" alt="Python Project for Data Engineering">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/introduction_to_relational_databases_rdbms.png" alt="Introduction to Relational Databases (RDBMS)">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/automate_your_life_with_python.jpeg" alt="Automate your Life with python">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/python_bash_and_sql_essentials_for_data_engineering_specialization.png" alt="Python, Bash and SQL Essentials for Data Engineering Specialization">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/web_applications_and_command_line_tools_for_data_engineering.png" alt="Web Applications and Command-Line Tools for Data Engineering">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/linux_and_bash_for_data_engineering.png" alt="Linux and Bash for Data Engineering">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/python_and_pandas_for_data_engineering.png" alt="Python and Pandas for Data Engineering">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/scripting_with_python_and_sql_for_data_engineering.png" alt="Scripting with Python and SQL for Data Engineering">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/google_data_analytics_specialization.jpeg" alt="Google Data Analytics Specialization">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/google_it_support_specialization.jpeg" alt="Google IT Support Specialization">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/sales_and_crm_overview.png" alt="Sales and CRM Overview">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/data_analysis_with_r_programming.png" alt="Data Analysis with R Programming">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/google_data_analytics_capstone_complete_a_case_study.png" alt="Google Data Analytics Capstone: Complete a Case Study">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/google_data_analytics_certificate.png" alt="Google Data Analytics Certificate">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/analyze_data_to_answer_questions.png" alt="Analyze Data to Answer Questions">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/process_data_from_dirty_to_clean.png" alt="Process Data from Dirty to Clean">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/share_data_through_the_art_of_visualization.png" alt="Share Data Through the Art of Visualization">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/prepare_data_for_exploration.png" alt="Prepare Data for Exploration">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/ask_questions_to_make_data_driven_decisions.png" alt="Ask Questions to Make Data-Driven Decisions">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/foundations_data_data_everywhere.png" alt="Foundations: Data, Data, Everywhere">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/technical_support_fundamentals.png" alt="Technical Support Fundamentals">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/python_for_data_science_ai_development.png" alt="Python for Data Science, AI & Development">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/introduction_to_data_engineering.png" alt="Introduction to Data Engineering">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/crash_course_on_python.png" alt="Crash Course on Python">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/the_bits_and_bytes_of_computer_networking.png" alt="The Bits and Bytes of Computer Networking">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/system_administration_and_it_infrastructure_services.png" alt="System Administration and IT Infrastructure Services">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/operating_systems_and_you_becoming_a_power_user.png" alt="Operating Systems and You: Becoming a Power User">
+        </div>
+        <div class="print-cert-page">
+            <img src="certs/it_security_defense_against_the_digital_dark_arts.png" alt="IT Security: Defense against the digital dark arts">
         </div>
     </div>
 
