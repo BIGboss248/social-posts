@@ -9,23 +9,35 @@
     <!-- Google Fonts: Vazirmatn for premium Persian typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
 
     <style>
         /* CSS Reset & Variables */
         :root {
-            --primary: #0f172a;       /* Slate 900 */
-            --primary-light: #1e293b; /* Slate 800 */
-            --accent: #0d9488;        /* Teal 600 */
-            --accent-hover: #0f766e;  /* Teal 700 */
-            --accent-light: #f0fdfa;  /* Teal 50 */
-            --text-main: #334155;     /* Slate 700 */
-            --text-dark: #0f172a;     /* Slate 900 */
-            --text-muted: #64748b;    /* Slate 500 */
-            --bg-sidebar: #f8fafc;    /* Slate 50 */
+            --primary: #0f172a;
+            /* Slate 900 */
+            --primary-light: #1e293b;
+            /* Slate 800 */
+            --accent: #0d9488;
+            /* Teal 600 */
+            --accent-hover: #0f766e;
+            /* Teal 700 */
+            --accent-light: #f0fdfa;
+            /* Teal 50 */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-dark: #0f172a;
+            /* Slate 900 */
+            --text-muted: #64748b;
+            /* Slate 500 */
+            --bg-sidebar: #f8fafc;
+            /* Slate 50 */
             --bg-body: #ffffff;
-            --border-color: #cbd5e1;  /* Slate 300 */
-            --border-light: #e2e8f0;  /* Slate 200 */
+            --border-color: #cbd5e1;
+            /* Slate 300 */
+            --border-light: #e2e8f0;
+            /* Slate 200 */
             --font-family: 'Vazirmatn', Tahoma, sans-serif;
         }
 
@@ -78,7 +90,8 @@
 
         .header-info p {
             font-size: 15px;
-            color: #ccfbf1; /* Teal 100 */
+            color: #ccfbf1;
+            /* Teal 100 */
             font-weight: 500;
             line-height: 1.5;
         }
@@ -540,7 +553,7 @@
             }
 
             header {
-                padding: 25px;
+                padding: 20px 25px;
                 background: var(--primary) !important;
                 color: #ffffff !important;
                 -webkit-print-color-adjust: exact;
@@ -561,26 +574,49 @@
                 display: none !important;
             }
 
+            /* Page 1: Full-width details and Skill Matrix */
             .main-grid {
-                display: grid;
-                grid-template-columns: 30% 70%;
+                display: block !important;
+                width: 100% !important;
                 min-height: auto;
             }
 
             .sidebar {
-                background-color: var(--bg-sidebar) !important;
+                width: 100% !important;
+                background-color: #f8fafc !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
-                padding: 20px;
-                border-left: 1px solid var(--border-light);
+                padding: 15px 20px !important;
+                border-left: none !important;
+                border-bottom: 2px solid var(--border-light) !important;
+                margin-bottom: 15px !important;
+            }
+
+            .contact-list {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                gap: 10px 20px !important;
+            }
+
+            .contact-item {
+                margin-bottom: 0 !important;
+            }
+
+            /* Full width Skill Matrix grid on print */
+            .skills-matrix-wrapper {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
+                width: 100% !important;
             }
 
             .content-area {
-                padding: 20px;
+                width: 100% !important;
+                padding: 0 20px !important;
             }
 
             .section-title {
-                margin-bottom: 12px;
+                margin-bottom: 10px;
                 color: var(--primary) !important;
                 border-bottom-color: var(--border-light);
                 font-size: 13px;
@@ -597,27 +633,6 @@
                 background-color: #f1f5f9 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
-            }
-
-            .cert-grid-new {
-                grid-template-columns: 1fr;
-                gap: 8px;
-            }
-
-            .cert-card-new {
-                background-color: var(--bg-sidebar) !important;
-                border-color: var(--border-light) !important;
-                padding: 8px 10px;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .cert-card-title {
-                font-size: 10.5px;
-            }
-
-            .cert-card-body {
-                font-size: 9.5px;
             }
 
             .project-card {
@@ -639,8 +654,28 @@
             .sidebar-section,
             .timeline-item,
             .project-card,
-            .cert-card-new,
             .summary-text {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Next Page: Full-width Certifications grid */
+            .certifications-section {
+                page-break-before: always !important;
+                break-before: page !important;
+                width: 100% !important;
+                padding-top: 10px !important;
+            }
+
+            .cert-compact-grid {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 6px !important;
+                width: 100% !important;
+            }
+
+            .cert-compact-card {
+                padding: 5px 8px !important;
                 page-break-inside: avoid;
                 break-inside: avoid;
             }
@@ -656,10 +691,30 @@
                 page-break-inside: avoid;
                 break-inside: avoid;
             }
-            
-            .cert-verification-note a {
-                color: var(--accent-hover) !important;
-                font-weight: bold !important;
+
+            /* Certification Pictures after the grid */
+            .print-cert-gallery {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .print-cert-page {
+                page-break-before: always !important;
+                break-before: page !important;
+                height: 100vh;
+                display: flex !important;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                padding: 20px;
+                background-color: #ffffff;
+            }
+
+            .print-cert-page img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+                display: block;
             }
 
             @page {
@@ -688,7 +743,7 @@
             flex-direction: column;
             justify-content: space-between;
             transition: all 0.2s ease;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.01);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.01);
         }
 
         .cert-compact-card:hover {
@@ -717,43 +772,6 @@
         .print-cert-gallery {
             display: none;
         }
-
-        /* Print Layout for Landscape Certificates */
-        @media print {
-            .cert-compact-grid {
-                grid-template-columns: repeat(3, 1fr) !important;
-                gap: 5px !important;
-            }
-
-            .cert-compact-card {
-                padding: 4px 6px !important;
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-
-            .print-cert-gallery {
-                display: block !important;
-            }
-
-            .print-cert-page {
-                page-break-before: always;
-                break-before: page;
-                height: 100vh;
-                display: flex !important;
-                justify-content: center;
-                align-items: center;
-                box-sizing: border-box;
-                padding: 20px;
-                background-color: #ffffff;
-            }
-
-            .print-cert-page img {
-                max-width: 100%;
-                max-height: 100%;
-                object-fit: contain;
-                display: block;
-            }
-        }
     </style>
 </head>
 
@@ -764,11 +782,13 @@
         <header>
             <div class="header-info">
                 <h1>امین جمالی</h1>
-                <p>کارشناس ارشد فناوری اطلاعات (IT) | توسعه‌دهنده وب و متخصص راهکارهای هوش تجاری (BI) و داده‌های مالی</p>
+                <p>کارشناس ارشد فناوری اطلاعات (IT) | توسعه‌دهنده وب و متخصص راهکارهای هوش تجاری (BI) و داده‌های مالی
+                </p>
             </div>
             <button class="print-btn" onclick="window.print()">
                 <svg viewBox="0 0 24 24">
-                    <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" />
+                    <path
+                        d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" />
                 </svg>
                 نسخه چاپی / خروجی PDF
             </button>
@@ -784,48 +804,61 @@
                 <div class="sidebar-section">
                     <h2 class="section-title">
                         <svg viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
                         </svg>
                         اطلاعات تماس
                     </h2>
                     <ul class="contact-list">
                         <li class="contact-item">
                             <svg viewBox="0 0 24 24">
-                                <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                                <path
+                                    d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" />
                             </svg>
                             <span>۲۵ خرداد ۱۳۷۹</span>
                         </li>
                         <li class="contact-item">
                             <svg viewBox="0 0 24 24">
-                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                             </svg>
                             <span>اصفهان، ایران</span>
                         </li>
                         <li class="contact-item">
                             <svg viewBox="0 0 24 24">
-                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                             </svg>
                             <a href="mailto:aminjamali79@gmail.com">aminjamali79@gmail.com</a>
                         </li>
                         <li class="contact-item">
                             <svg viewBox="0 0 24 24">
-                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                                <path
+                                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
                             </svg>
-                            <a href="https://linkedin.com/in/amin-jamali2000" target="_blank">linkedin.com/in/amin-jamali2000</a>
+                            <a href="https://linkedin.com/in/amin-jamali2000"
+                                target="_blank">linkedin.com/in/amin-jamali2000</a>
                         </li>
                         <li class="contact-item">
                             <svg viewBox="0 0 24 24">
-                                <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+                                <path
+                                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
                             </svg>
                             <a href="https://github.com/BIGboss248" target="_blank">github.com/BIGboss248</a>
                         </li>
                     </ul>
 
                     <!-- LinkedIn QR Code Card -->
-                    <div style="margin-top: 18px; padding: 12px; background-color: #ffffff; border: 1px solid var(--border-light); border-radius: 8px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
-                        <div style="font-size: 11px; font-weight: 700; color: var(--primary-light); margin-bottom: 6px;">کد QR لینکدین / LinkedIn</div>
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=https://linkedin.com/in/amin-jamali2000" alt="LinkedIn QR Code" style="width: 105px; height: 105px; border-radius: 6px; border: 1px solid var(--border-light); padding: 4px; background: #ffffff; display: block; margin: 0 auto;" />
-                        <span style="font-size: 9.5px; color: var(--text-muted); margin-top: 5px; display: block;">اسکن کنید جهت مشاهده پروفایل</span>
+                    <div
+                        style="margin-top: 18px; padding: 12px; background-color: #ffffff; border: 1px solid var(--border-light); border-radius: 8px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+                        <div
+                            style="font-size: 11px; font-weight: 700; color: var(--primary-light); margin-bottom: 6px;">
+                            کد QR لینکدین / LinkedIn</div>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=https://linkedin.com/in/amin-jamali2000"
+                            alt="LinkedIn QR Code"
+                            style="width: 105px; height: 105px; border-radius: 6px; border: 1px solid var(--border-light); padding: 4px; background: #ffffff; display: block; margin: 0 auto;" />
+                        <span style="font-size: 9.5px; color: var(--text-muted); margin-top: 5px; display: block;">جهت
+                            مشاهده پروفایل اسکن کنید</span>
                     </div>
                 </div>
 
@@ -833,68 +866,71 @@
                 <div class="sidebar-section">
                     <h2 class="section-title">
                         <svg viewBox="0 0 24 24">
-                            <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.3C.5 6.7.9 9.8 2.9 11.8c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.6z" />
+                            <path
+                                d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.3C.5 6.7.9 9.8 2.9 11.8c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.6z" />
                         </svg>
-                        ماتریس مهارت‌ها
+                        مهارت‌ها
                     </h2>
-                    
-                    <div class="skill-category">
-                        <h3 class="skill-cat-title">توسعه نرم‌افزار و فرانت‌اند</h3>
-                        <div class="skills-container">
-                            <span class="skill-badge">Front-End</span>
-                            <span class="skill-badge">UI Design</span>
-                            <span class="skill-badge">UX Design</span>
-                            <span class="skill-badge">ReactJS</span>
-                            <span class="skill-badge">Next.js</span>
-                            <span class="skill-badge">TypeScript</span>
-                            <span class="skill-badge">Tailwind CSS</span>
-                            <span class="skill-badge">Flutter</span>
-                        </div>
-                    </div>
 
-                    <div class="skill-category">
-                        <h3 class="skill-cat-title">شبکه، اتوماسیون و سرور</h3>
-                        <div class="skills-container">
-                            <span class="skill-badge">Networking</span>
-                            <span class="skill-badge">Active Directory</span>
-                            <span class="skill-badge">Automation</span>
-                            <span class="skill-badge">Python (Pandas)</span>
-                            <span class="skill-badge">Go (Golang)</span>
-                            <span class="skill-badge">Shell Scripting</span>
-                            <span class="skill-badge">REST APIs</span>
+                    <div class="skills-matrix-wrapper">
+                        <div class="skill-category">
+                            <h3 class="skill-cat-title">توسعه نرم‌افزار و فرانت‌اند</h3>
+                            <div class="skills-container">
+                                <span class="skill-badge">Front-End</span>
+                                <span class="skill-badge">UI Design</span>
+                                <span class="skill-badge">UX Design</span>
+                                <span class="skill-badge">ReactJS</span>
+                                <span class="skill-badge">Next.js</span>
+                                <span class="skill-badge">TypeScript</span>
+                                <span class="skill-badge">Tailwind CSS</span>
+                                <span class="skill-badge">Flutter</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="skill-category">
-                        <h3 class="skill-cat-title">مهندسی نرم‌افزار و دواپس</h3>
-                        <div class="skills-container">
-                            <span class="skill-badge">Docker</span>
-                            <span class="skill-badge">Containers</span>
-                            <span class="skill-badge">Linux</span>
-                            <span class="skill-badge">SQL</span>
-                            <span class="skill-badge">MongoDB</span>
-                            <span class="skill-badge">Firebase</span>
+                        <div class="skill-category">
+                            <h3 class="skill-cat-title">شبکه، اتوماسیون و سرور</h3>
+                            <div class="skills-container">
+                                <span class="skill-badge">Networking</span>
+                                <span class="skill-badge">Active Directory</span>
+                                <span class="skill-badge">Automation</span>
+                                <span class="skill-badge">Python (Pandas)</span>
+                                <span class="skill-badge">Go (Golang)</span>
+                                <span class="skill-badge">Shell Scripting</span>
+                                <span class="skill-badge">REST APIs</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="skill-category">
-                        <h3 class="skill-cat-title">هوش تجاری، تحلیل مالی و AI</h3>
-                        <div class="skills-container">
-                            <span class="skill-badge">Financial Data Analysis</span>
-                            <span class="skill-badge">Accounting (حسابداری)</span>
-                            <span class="skill-badge">Business Intelligence (BI)</span>
-                            <span class="skill-badge">Prompt Engineering</span>
-                            <span class="skill-badge">Generative AI</span>
-                            <span class="skill-badge">Tableau</span>
+                        <div class="skill-category">
+                            <h3 class="skill-cat-title">مهندسی نرم‌افزار و دواپس</h3>
+                            <div class="skills-container">
+                                <span class="skill-badge">Docker</span>
+                                <span class="skill-badge">Containers</span>
+                                <span class="skill-badge">Linux</span>
+                                <span class="skill-badge">SQL</span>
+                                <span class="skill-badge">MongoDB</span>
+                                <span class="skill-badge">Firebase</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="skill-category">
-                        <h3 class="skill-cat-title">بهینه‌سازی موتورهای جستجو</h3>
-                        <div class="skills-container">
-                            <span class="skill-badge">E-commerce SEO</span>
-                            <span class="skill-badge">Technical SEO Audit</span>
-                            <span class="skill-badge">Core Web Vitals</span>
+                        <div class="skill-category">
+                            <h3 class="skill-cat-title">هوش تجاری، تحلیل مالی و AI</h3>
+                            <div class="skills-container">
+                                <span class="skill-badge">Financial Data Analysis</span>
+                                <span class="skill-badge">Accounting (حسابداری)</span>
+                                <span class="skill-badge">Business Intelligence (BI)</span>
+                                <span class="skill-badge">Prompt Engineering</span>
+                                <span class="skill-badge">Generative AI</span>
+                                <span class="skill-badge">Tableau</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="skill-cat-title">بهینه‌سازی موتورهای جستجو</h3>
+                            <div class="skills-container">
+                                <span class="skill-badge">E-commerce SEO</span>
+                                <span class="skill-badge">Technical SEO Audit</span>
+                                <span class="skill-badge">Core Web Vitals</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -903,7 +939,8 @@
                 <div class="sidebar-section">
                     <h2 class="section-title">
                         <svg viewBox="0 0 24 24">
-                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.33-.14 2 0 .67.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56-.6 1.11-1.06 2.31-1.38 3.56zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.34-.16-2 0-.66.07-1.34.16-2h4.68c.09.66.16 1.34.16 2 0 .66-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.33.14-2 0-.67-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z" />
+                            <path
+                                d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.33-.14 2 0 .67.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56-.6 1.11-1.06 2.31-1.38 3.56zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.34-.16-2 0-.66.07-1.34.16-2h4.68c.09.66.16 1.34.16 2 0 .66-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.33.14-2 0-.67-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z" />
                         </svg>
                         زبان‌ها
                     </h2>
@@ -948,12 +985,18 @@
                 <section class="summary-text">
                     <h2 class="section-title">
                         <svg viewBox="0 0 24 24">
-                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                            <path
+                                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                         </svg>
                         پروفایل تخصصی
                     </h2>
                     <p>
-                        متخصص چندبعدی و توسعه‌دهنده ارشد حوزه فناوری اطلاعات و نرم‌افزار با رویکرد حل مسئله و تفکر تحلیلگر میان‌رشته‌ای (فناوری و مالی). دارای بیش از ۴ سال تجربه در طراحی و تجاری‌سازی پلتفرم‌های تحت وب پیشرفته با اکوسیستم Next.js و TypeScript، اتوماسیون زیرساخت‌های سازمانی و تخصص عمیق در پیاده‌سازی سیستم‌های هوش تجاری (BI). تسلط بر ابزارهای نوین هوش مصنوعی مولد، تحلیل داده با Python (Pandas) و مفاهیم DevOps جهت بهینه‌سازی، ارتقای پایداری و مقیاس‌پذیری محصولات دانش‌بنیان و سیستم‌های صنعتی.
+                        متخصص چندبعدی و توسعه‌دهنده ارشد حوزه فناوری اطلاعات و نرم‌افزار با رویکرد حل مسئله و تفکر
+                        تحلیلگر میان‌رشته‌ای (فناوری و مالی). دارای بیش از ۴ سال تجربه در طراحی و تجاری‌سازی پلتفرم‌های
+                        تحت وب پیشرفته با اکوسیستم Next.js و TypeScript، اتوماسیون زیرساخت‌های سازمانی و تخصص عمیق در
+                        پیاده‌سازی سیستم‌های هوش تجاری (BI). تسلط بر ابزارهای نوین هوش مصنوعی مولد، تحلیل داده با Python
+                        (Pandas) و مفاهیم DevOps جهت بهینه‌سازی، ارتقای پایداری و مقیاس‌پذیری محصولات دانش‌بنیان و
+                        سیستم‌های صنعتی.
                     </p>
                 </section>
 
@@ -961,7 +1004,8 @@
                 <section>
                     <h2 class="section-title">
                         <svg viewBox="0 0 24 24">
-                            <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
+                            <path
+                                d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
                         </svg>
                         سوابق شغلی و تجارب صنعتی (R&D)
                     </h2>
@@ -972,11 +1016,15 @@
                                 <span class="timeline-title">توسعه‌دهنده نرم‌افزارهای تحت وب و متخصص SEO</span>
                                 <span class="timeline-date">دی 1404 - اکنون</span>
                             </div>
-                            <div class="timeline-company">فریلنسر (Freelance) <span class="timeline-type">| پاره‌وقت</span></div>
+                            <div class="timeline-company">فریلنسر (Freelance) <span class="timeline-type">|
+                                    پاره‌وقت</span></div>
                             <div class="timeline-desc">
                                 <ul>
-                                    <li><strong>تولید محصول و تجاری‌سازی:</strong> طراحی و توسعه نرم‌افزارهای تحت وب مقیاس‌پذیر و پلتفرم‌های مدرن تجارت الکترونیک با معماری تمیز.</li>
-                                    <li><strong>مهندسی عملکرد (Performance):</strong> پیاده‌سازی موفق فرآیندهای سئو فنی و ممیزی تخصصی کلمات کلیدی با تمرکز ویژه بر بهبود امتیازات Core Web Vitals برای افزایش ترافیک ارگانیک پلتفرم‌ها.</li>
+                                    <li><strong>تولید محصول و تجاری‌سازی:</strong> طراحی و توسعه نرم‌افزارهای تحت وب
+                                        مقیاس‌پذیر و پلتفرم‌های مدرن تجارت الکترونیک با معماری تمیز.</li>
+                                    <li><strong>مهندسی عملکرد (Performance):</strong> پیاده‌سازی موفق فرآیندهای سئو فنی
+                                        و ممیزی تخصصی کلمات کلیدی با تمرکز ویژه بر بهبود امتیازات Core Web Vitals برای
+                                        افزایش ترافیک ارگانیک پلتفرم‌ها.</li>
                                 </ul>
                             </div>
                         </div>
@@ -986,11 +1034,14 @@
                                 <span class="timeline-title">کارشناس فناوری اطلاعات (IT) و اتوماسیون</span>
                                 <span class="timeline-date">خرداد ۱۴۰۰ - اکنون</span>
                             </div>
-                            <div class="timeline-company">شرکت بهار تجارت (Bahar Trade) <span class="timeline-type">| تمام‌وقت</span></div>
+                            <div class="timeline-company">شرکت بهار تجارت (Bahar Trade) <span class="timeline-type">|
+                                    تمام‌وقت</span></div>
                             <div class="timeline-desc">
                                 <ul>
-                                    <li><strong>مهندسی زیرساخت:</strong> پشتیبانی، مدیریت و پایش (Monitoring) مستمر زیرساخت‌های شبکه و سیستم‌عامل‌های شرکت جهت ارتقای بازده فنی.</li>
-                                    <li><strong>اتوماسیون و مدیریت داده:</strong> کاهش فرآیندهای موازی و سنتی از طریق شل اسکریپت‌نویسی و مدیریت بهینه پایگاه داده‌های رابطه‌ای مبتنی بر SQL.</li>
+                                    <li><strong>مهندسی زیرساخت:</strong> پشتیبانی، مدیریت و پایش (Monitoring) مستمر
+                                        زیرساخت‌های شبکه و سیستم‌عامل‌های شرکت جهت ارتقای بازده فنی.</li>
+                                    <li><strong>اتوماسیون و مدیریت داده:</strong> کاهش فرآیندهای موازی و سنتی از طریق شل
+                                        اسکریپت‌نویسی و مدیریت بهینه پایگاه داده‌های رابطه‌ای مبتنی بر SQL.</li>
                                 </ul>
                             </div>
                         </div>
@@ -1003,7 +1054,9 @@
                             <div class="timeline-company">خوداشتغال <span class="timeline-type">| پاره‌وقت</span></div>
                             <div class="timeline-desc">
                                 <ul>
-                                    <li><strong>توسعه استراتژی‌های هوشمند:</strong> تحلیل کلان‌داده‌های مالی بین‌المللی و بکارگیری برنامه‌نویسی پایتون و کتابخانه Pandas جهت مدل‌سازی، تست استراتژی‌ها (Backtesting) و پیاده‌سازی الگوریتم‌های معاملاتی.</li>
+                                    <li><strong>توسعه استراتژی‌های هوشمند:</strong> تحلیل کلان‌داده‌های مالی بین‌المللی
+                                        و بکارگیری برنامه‌نویسی پایتون و کتابخانه Pandas جهت مدل‌سازی، تست استراتژی‌ها
+                                        (Backtesting) و پیاده‌سازی الگوریتم‌های معاملاتی.</li>
                                 </ul>
                             </div>
                         </div>
@@ -1015,7 +1068,8 @@
                 <section style="margin-bottom: 30px;">
                     <h2 class="section-title">
                         <svg viewBox="0 0 24 24">
-                            <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+                            <path
+                                d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
                         </svg>
                         پروژه‌های شاخص فنی و صنعتی
                     </h2>
@@ -1025,7 +1079,9 @@
                             پلتفرم تجاری و فروشگاهی قطعات یدکی ستایش (Setayesh Parts)
                         </div>
                         <div class="project-desc">
-                            توسعه فرانت‌اند و بک‌اند با Next.js و Payload CMS شامل پروفایل کاربری و درگاه پرداخت. استقرار و معماری پروژه با Docker روی VPS شخصی، راه‌اندازی خط لوله CI/CD (GitHub Actions) و یکپارچه‌سازی با Cloudflare CDN جهت ارتقای سرعت، امنیت و پایداری محصول.
+                            توسعه فرانت‌اند و بک‌اند با Next.js و Payload CMS شامل پروفایل کاربری و درگاه پرداخت.
+                            استقرار و معماری پروژه با Docker روی VPS شخصی، راه‌اندازی خط لوله CI/CD (GitHub Actions) و
+                            یکپارچه‌سازی با Cloudflare CDN جهت ارتقای سرعت، امنیت و پایداری محصول.
                         </div>
                         <div class="project-techs">
                             <span class="tech-badge">Next.js</span>
@@ -1041,7 +1097,8 @@
                             وب‌سایت رسمی و سامانه محتوایی شرکت بهار تجارت (Bahar Trade Co)
                         </div>
                         <div class="project-desc">
-                            طراحی اختصاصی پلتفرم نمایش محصولات فولادی متصل به CMS پیشرفته با رویکرد بهینهسازی نرخ تبدیل و سئو.
+                            طراحی اختصاصی پلتفرم نمایش محصولات فولادی متصل به CMS پیشرفته با رویکرد بهینهسازی نرخ تبدیل
+                            و سئو.
                         </div>
                         <div class="project-techs">
                             <span class="tech-badge">Next.js</span>
@@ -1069,8 +1126,12 @@
                             <div class="timeline-company">دانشگاه آزاد اسلامی اصفهان</div>
                             <div class="timeline-desc">
                                 <ul>
-                                    <li><strong>حسابداری و امور مالی:</strong> دارای تجربه کاری به عنوان حسابدار (Accountant) و تسلط بر مدیریت و تحلیل داده‌های مالی (Financial Data Analysis).</li>
-                                    <li><strong>شاخص کاربردی:</strong> مشارکت فعال در مرکز رشد دانشگاه با تمرکز بر تجاری‌سازی پروژه‌ها و پیوند تخصص‌های فنی کامپیوتر با دانش تحلیل بازار و راهکارهای هوش تجاری (BI).</li>
+                                    <li><strong>حسابداری و امور مالی:</strong> دارای تجربه کاری به عنوان حسابدار
+                                        (Accountant) و تسلط بر مدیریت و تحلیل داده‌های مالی (Financial Data Analysis).
+                                    </li>
+                                    <li><strong>شاخص کاربردی:</strong> مشارکت فعال در مرکز رشد دانشگاه با تمرکز بر
+                                        تجاری‌سازی پروژه‌ها و پیوند تخصص‌های فنی کامپیوتر با دانش تحلیل بازار و
+                                        راهکارهای هوش تجاری (BI).</li>
                                 </ul>
                             </div>
                         </div>
@@ -1082,9 +1143,13 @@
                             <div class="timeline-company">دانشگاه آزاد</div>
                             <div class="timeline-desc">
                                 <ul>
-                                    <li><strong>توسعه فرانت‌اند و طراحی UI/UX:</strong> دارای تجربه در توسعه فرانت‌اند (Front-End)، طراحی رابط کاربری (UI Design) و طراحی تجربه کاربری (UX Design).</li>
-                                    <li><strong>شبکه و اکتیو دایرکتوری:</strong> تسلط و تجربه عملی در حوزه شبکه (Networking) و مدیریت اکتیو دایرکتوری (Active Directory).</li>
-                                    <li><strong>اتوماسیون:</strong> توسعه اسکریپت‌ها و پیاده‌سازی اتوماسیون (Automation) برای بهینه‌سازی فرآیندهای سازمانی و سیستم‌ها.</li>
+                                    <li><strong>توسعه فرانت‌اند و طراحی UI/UX:</strong> دارای تجربه در توسعه فرانت‌اند
+                                        (Front-End)، طراحی رابط کاربری (UI Design) و طراحی تجربه کاربری (UX Design).
+                                    </li>
+                                    <li><strong>شبکه و اکتیو دایرکتوری:</strong> تسلط و تجربه عملی در حوزه شبکه
+                                        (Networking) و مدیریت اکتیو دایرکتوری (Active Directory).</li>
+                                    <li><strong>اتوماسیون:</strong> توسعه اسکریپت‌ها و پیاده‌سازی اتوماسیون (Automation)
+                                        برای بهینه‌سازی فرآیندهای سازمانی و سیستم‌ها.</li>
                                 </ul>
                             </div>
                         </div>
@@ -1094,28 +1159,35 @@
                                 <span class="timeline-title">دیپلم علوم ریاضی و فیزیک</span>
                                 <span class="timeline-date">۱۳۹۱ - ۱۳۹۷</span>
                             </div>
-                            <div class="timeline-company">سازمان ملی پرورش استعدادهای درخشان (سمپاد) - دبیرستان اژه‌ای اصفهان</div>
+                            <div class="timeline-company">سازمان ملی پرورش استعدادهای درخشان (سمپاد) - دبیرستان اژه‌ای
+                                اصفهان</div>
                         </div>
 
                     </div>
                 </section>
 
                 <!-- Certifications -->
-                <section>
+                <section class="certifications-section">
                     <h2 class="section-title">
                         <svg viewBox="0 0 24 24">
-                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-6V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                            <path
+                                d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-6V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
                         </svg>
                         گواهینامه‌های بین‌المللی و دوره‌های تخصصی مهارتی
                     </h2>
                     <div class="cert-verification-note">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                        </svg>
                         <span>تأیید اعتبار و بررسی تمامی گواهینامه‌ها در لینکدین:</span>
-                        <a href="https://www.linkedin.com/in/amin-jamali2000/details/certifications/" target="_blank">linkedin.com/in/amin-jamali2000/details/certifications/</a>
+                        <a href="https://www.linkedin.com/in/amin-jamali2000/details/certifications/"
+                            target="_blank">linkedin.com/in/amin-jamali2000/details/certifications/</a>
                     </div>
-                    
+
                     <div class="cert-compact-grid">
-                        <a href="https://www.coursera.org/account/accomplishments/records/UEWQTEUE2842" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/records/UEWQTEUE2842" target="_blank"
+                            class="cert-compact-card">
                             <span class="cert-compact-title">Generative AI Content and Prompt Optimization</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1123,7 +1195,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/records/83NC0S61PC0E" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/records/83NC0S61PC0E" target="_blank"
+                            class="cert-compact-card">
                             <span class="cert-compact-title">SEO Visibility, Keyword Research, and Auditing</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1131,7 +1204,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/specialization/S8L0GL26QTKS" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/S8L0GL26QTKS"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Google AI</span>
                             <span class="cert-compact-meta">
                                 <span>Google</span>
@@ -1139,7 +1213,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/records/R1N3O195Z76B" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/records/R1N3O195Z76B" target="_blank"
+                            class="cert-compact-card">
                             <span class="cert-compact-title">AI for App Building</span>
                             <span class="cert-compact-meta">
                                 <span>Google</span>
@@ -1147,7 +1222,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/records/WTT2RJLVAASB" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/records/WTT2RJLVAASB" target="_blank"
+                            class="cert-compact-card">
                             <span class="cert-compact-title">AI for Data Analysis</span>
                             <span class="cert-compact-meta">
                                 <span>Google</span>
@@ -1155,7 +1231,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/records/96YZD7VKYTTT" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/records/96YZD7VKYTTT" target="_blank"
+                            class="cert-compact-card">
                             <span class="cert-compact-title">AI for Content Creation</span>
                             <span class="cert-compact-meta">
                                 <span>Google</span>
@@ -1163,7 +1240,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/records/NJ9VBWE3DYGQ" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/records/NJ9VBWE3DYGQ" target="_blank"
+                            class="cert-compact-card">
                             <span class="cert-compact-title">AI for Writing and Communicating</span>
                             <span class="cert-compact-meta">
                                 <span>Google</span>
@@ -1171,7 +1249,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/records/DCAODHSTDA5I" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/records/DCAODHSTDA5I" target="_blank"
+                            class="cert-compact-card">
                             <span class="cert-compact-title">AI for Research and Insights</span>
                             <span class="cert-compact-meta">
                                 <span>Google</span>
@@ -1179,7 +1258,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/records/DZ8AK5RKTUPB" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/records/DZ8AK5RKTUPB" target="_blank"
+                            class="cert-compact-card">
                             <span class="cert-compact-title">AI for Brainstorming and Planning</span>
                             <span class="cert-compact-meta">
                                 <span>Google</span>
@@ -1187,7 +1267,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/records/2NPALF7L4YWA" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/records/2NPALF7L4YWA" target="_blank"
+                            class="cert-compact-card">
                             <span class="cert-compact-title">AI Fundamentals</span>
                             <span class="cert-compact-meta">
                                 <span>Google</span>
@@ -1195,7 +1276,8 @@
                             </span>
                         </a>
 
-                        <a href="https://nextjs.org/learn/certificate?course=react-foundations&user=129616&certId=react-foundations-129616-1767122629221" target="_blank" class="cert-compact-card">
+                        <a href="https://nextjs.org/learn/certificate?course=react-foundations&user=129616&certId=react-foundations-129616-1767122629221"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">React Foundations for Next.js</span>
                             <span class="cert-compact-meta">
                                 <span>Vercel</span>
@@ -1203,23 +1285,28 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/specialization/P7LAPJE2DQAQ" target="_blank" class="cert-compact-card">
-                            <span class="cert-compact-title">IBM DevOps, Cloud, and Agile Foundations Specialization</span>
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/P7LAPJE2DQAQ"
+                            target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">IBM DevOps, Cloud, and Agile Foundations
+                                Specialization</span>
                             <span class="cert-compact-meta">
                                 <span>IBM</span>
                                 <span>نوامبر ۲۰۲۵</span>
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/records/ZES3C4RAN009" target="_blank" class="cert-compact-card">
-                            <span class="cert-compact-title">Introduction to Containers w/ Docker, Kubernetes & OpenShift</span>
+                        <a href="https://www.coursera.org/account/accomplishments/records/ZES3C4RAN009" target="_blank"
+                            class="cert-compact-card">
+                            <span class="cert-compact-title">Introduction to Containers w/ Docker, Kubernetes &
+                                OpenShift</span>
                             <span class="cert-compact-meta">
                                 <span>IBM</span>
                                 <span>نوامبر ۲۰۲۵</span>
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/records/2RUFQPULJS8Z" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/records/2RUFQPULJS8Z" target="_blank"
+                            class="cert-compact-card">
                             <span class="cert-compact-title">Introduction to Agile Development and Scrum</span>
                             <span class="cert-compact-meta">
                                 <span>IBM</span>
@@ -1227,7 +1314,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/records/UR85P2JAJLKI" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/records/UR85P2JAJLKI" target="_blank"
+                            class="cert-compact-card">
                             <span class="cert-compact-title">Introduction to DevOps</span>
                             <span class="cert-compact-meta">
                                 <span>IBM</span>
@@ -1235,15 +1323,18 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/records/ZGNUM46MBPM4" target="_blank" class="cert-compact-card">
-                            <span class="cert-compact-title">Supervised Machine Learning: Regression and Classification</span>
+                        <a href="https://www.coursera.org/account/accomplishments/records/ZGNUM46MBPM4" target="_blank"
+                            class="cert-compact-card">
+                            <span class="cert-compact-title">Supervised Machine Learning: Regression and
+                                Classification</span>
                             <span class="cert-compact-meta">
                                 <span>DeepLearning.AI, Stanford University</span>
                                 <span>ژانویه ۲۰۲۴</span>
                             </span>
                         </a>
 
-                        <a href="https://www.credly.com/badges/e6ce9bf0-121e-49af-b29a-53d7d5390651/linked_in_profile" target="_blank" class="cert-compact-card">
+                        <a href="https://www.credly.com/badges/e6ce9bf0-121e-49af-b29a-53d7d5390651/linked_in_profile"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">AWS Cloud Quest: Machine Learning</span>
                             <span class="cert-compact-meta">
                                 <span>Amazon Web Services (AWS)</span>
@@ -1251,7 +1342,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.credly.com/badges/a85ef716-33c2-4bb4-ae1a-22911bb4e95b/linked_in_profile" target="_blank" class="cert-compact-card">
+                        <a href="https://www.credly.com/badges/a85ef716-33c2-4bb4-ae1a-22911bb4e95b/linked_in_profile"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">AWS Cloud Quest: Data Analytics</span>
                             <span class="cert-compact-meta">
                                 <span>Amazon Web Services (AWS)</span>
@@ -1259,7 +1351,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.credly.com/badges/70ad0582-c168-46ed-8f68-2a9a0a3e8a15/linked_in_profile" target="_blank" class="cert-compact-card">
+                        <a href="https://www.credly.com/badges/70ad0582-c168-46ed-8f68-2a9a0a3e8a15/linked_in_profile"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">AWS Cloud Quest: Serverless Developer</span>
                             <span class="cert-compact-meta">
                                 <span>Amazon Web Services (AWS)</span>
@@ -1267,7 +1360,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.credly.com/badges/a5ac46a3-cb05-4b32-b893-17730a7f54e6/linked_in_profile" target="_blank" class="cert-compact-card">
+                        <a href="https://www.credly.com/badges/a5ac46a3-cb05-4b32-b893-17730a7f54e6/linked_in_profile"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">AWS Cloud Quest: Solutions Architect</span>
                             <span class="cert-compact-meta">
                                 <span>Amazon Web Services (AWS)</span>
@@ -1275,7 +1369,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.credly.com/badges/bba4a0b4-0cac-4010-8151-7d0e9091d742/linked_in_profile" target="_blank" class="cert-compact-card">
+                        <a href="https://www.credly.com/badges/bba4a0b4-0cac-4010-8151-7d0e9091d742/linked_in_profile"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">AWS Cloud Quest: Cloud Practitioner</span>
                             <span class="cert-compact-meta">
                                 <span>Amazon Web Services (AWS)</span>
@@ -1283,7 +1378,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.linkedin.com/learning/certificates/ee34dbf89781499e1bdec5630d5a73577471df517a91822314d75a905fddccde/" target="_blank" class="cert-compact-card">
+                        <a href="https://www.linkedin.com/learning/certificates/ee34dbf89781499e1bdec5630d5a73577471df517a91822314d75a905fddccde/"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Learning REST APIs</span>
                             <span class="cert-compact-meta">
                                 <span>LinkedIn</span>
@@ -1291,7 +1387,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.linkedin.com/learning/certificates/126f8a1ed9262d8ef3bdfca1667d8827972c1ad521090e85876ae957d7fc96b0/" target="_blank" class="cert-compact-card">
+                        <a href="https://www.linkedin.com/learning/certificates/126f8a1ed9262d8ef3bdfca1667d8827972c1ad521090e85876ae957d7fc96b0/"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Digital Marketing Foundations</span>
                             <span class="cert-compact-meta">
                                 <span>LinkedIn</span>
@@ -1299,7 +1396,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.linkedin.com/learning/certificates/1daafdea8be11d1ce5fb8d186103d03bcef74940750e20a5ce15f3fa63c076c8/" target="_blank" class="cert-compact-card">
+                        <a href="https://www.linkedin.com/learning/certificates/1daafdea8be11d1ce5fb8d186103d03bcef74940750e20a5ce15f3fa63c076c8/"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">What Is Business Analysis?</span>
                             <span class="cert-compact-meta">
                                 <span>LinkedIn</span>
@@ -1307,7 +1405,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/G66N9B7XBGQA" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/G66N9B7XBGQA"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Key Technologies for Business Specialization</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1315,7 +1414,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/ZF24W6KQYHLB" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/ZF24W6KQYHLB"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">What is Data Science?</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1323,7 +1423,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/MHVBPY9VZKDB" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/MHVBPY9VZKDB"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Introduction to Artificial Intelligence (AI)</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1331,7 +1432,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/A755TMZHG8QY" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/A755TMZHG8QY"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Introduction to Cloud Computing</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1339,7 +1441,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/SGZMGSSAZL3J" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/SGZMGSSAZL3J"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Relational Database Administration (DBA)</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1347,7 +1450,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/TBG7SDBKA9ZT" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/TBG7SDBKA9ZT"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Python Project for Data Engineering</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1355,7 +1459,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/QP75AYTQW6XP" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/QP75AYTQW6XP"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Introduction to Relational Databases (RDBMS)</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1363,7 +1468,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.udemy.com/certificate/UC-dfed7e28-ac19-437e-9607-37e7d0f4a475/" target="_blank" class="cert-compact-card">
+                        <a href="https://www.udemy.com/certificate/UC-dfed7e28-ac19-437e-9607-37e7d0f4a475/"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Automate your Life with python</span>
                             <span class="cert-compact-meta">
                                 <span>Udemy</span>
@@ -1371,23 +1477,28 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/HERDBP7JTHAK" target="_blank" class="cert-compact-card">
-                            <span class="cert-compact-title">Python, Bash and SQL Essentials for Data Engineering Specialization</span>
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/HERDBP7JTHAK"
+                            target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Python, Bash and SQL Essentials for Data Engineering
+                                Specialization</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
                                 <span>ژوئیه ۲۰۲۲</span>
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/ZTJ5CHXMNDEE" target="_blank" class="cert-compact-card">
-                            <span class="cert-compact-title">Web Applications and Command-Line Tools for Data Engineering</span>
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/ZTJ5CHXMNDEE"
+                            target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Web Applications and Command-Line Tools for Data
+                                Engineering</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
                                 <span>ژوئیه ۲۰۲۲</span>
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/3QL5TLJ6J7FD" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/3QL5TLJ6J7FD"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Linux and Bash for Data Engineering</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1395,7 +1506,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/ZDBQUK7A4SSJ" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/ZDBQUK7A4SSJ"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Python and Pandas for Data Engineering</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1403,7 +1515,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/9S2RA3SE9NVP" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/9S2RA3SE9NVP"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Scripting with Python and SQL for Data Engineering</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1411,7 +1524,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/6VVRS6Q2EMLH" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/6VVRS6Q2EMLH"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Google Data Analytics Specialization</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1419,7 +1533,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/ACYH2BZDEZZL" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/ACYH2BZDEZZL"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Google IT Support Specialization</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1427,7 +1542,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/UT7VAV9LW46M" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/UT7VAV9LW46M"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Sales and CRM Overview</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1435,7 +1551,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/NPN2JEVT9NLS" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/NPN2JEVT9NLS"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Data Analysis with R Programming</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1443,15 +1560,18 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/RFL4ERR2XUFS" target="_blank" class="cert-compact-card">
-                            <span class="cert-compact-title">Google Data Analytics Capstone: Complete a Case Study</span>
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/RFL4ERR2XUFS"
+                            target="_blank" class="cert-compact-card">
+                            <span class="cert-compact-title">Google Data Analytics Capstone: Complete a Case
+                                Study</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
                                 <span>ژوئیه ۲۰۲۲</span>
                             </span>
                         </a>
 
-                        <a href="https://www.credly.com/badges/5028151e-5f1d-4ab9-91b8-b9df23b150f7" target="_blank" class="cert-compact-card">
+                        <a href="https://www.credly.com/badges/5028151e-5f1d-4ab9-91b8-b9df23b150f7" target="_blank"
+                            class="cert-compact-card">
                             <span class="cert-compact-title">Google Data Analytics Certificate</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1459,7 +1579,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/H39YVJ9RCUDF" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/H39YVJ9RCUDF"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Analyze Data to Answer Questions</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1467,7 +1588,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/GAZQXQQD46WA" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/GAZQXQQD46WA"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Process Data from Dirty to Clean</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1475,7 +1597,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/TGJD7SCEFH5F" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/TGJD7SCEFH5F"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Share Data Through the Art of Visualization</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1483,7 +1606,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/XWPDTW9E3SMA" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/XWPDTW9E3SMA"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Prepare Data for Exploration</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1491,7 +1615,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/2PLZWJA6MHKH" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/2PLZWJA6MHKH"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Ask Questions to Make Data-Driven Decisions</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1499,7 +1624,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/SSG3FVLQ9B7V" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/SSG3FVLQ9B7V"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Foundations: Data, Data, Everywhere</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1507,7 +1633,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/5TTU7W6LEJNV" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/5TTU7W6LEJNV"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Technical Support Fundamentals</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1515,7 +1642,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/2HAVGXSCLUSJ" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/2HAVGXSCLUSJ"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Python for Data Science, AI & Development</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1523,7 +1651,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/AD7M3DFN4EKW" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/AD7M3DFN4EKW"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Introduction to Data Engineering</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1531,7 +1660,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/BDY6UBJERGNP" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/BDY6UBJERGNP"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Crash Course on Python</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1539,7 +1669,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/TFGWEPCX7F7N" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/TFGWEPCX7F7N"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">The Bits and Bytes of Computer Networking</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1547,7 +1678,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/SSAQBK2V274S" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/SSAQBK2V274S"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">System Administration and IT Infrastructure Services</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1555,7 +1687,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/LB42XRZQ6F92" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/LB42XRZQ6F92"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">Operating Systems and You: Becoming a Power User</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1563,7 +1696,8 @@
                             </span>
                         </a>
 
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/4QSW3ZJB638G" target="_blank" class="cert-compact-card">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/4QSW3ZJB638G"
+                            target="_blank" class="cert-compact-card">
                             <span class="cert-compact-title">IT Security: Defense against the digital dark arts</span>
                             <span class="cert-compact-meta">
                                 <span>Coursera</span>
@@ -1581,10 +1715,12 @@
     <!-- Landscape Certificate Gallery (Print-only) -->
     <div class="print-cert-gallery">
         <div class="print-cert-page">
-            <img src="certs/generative_ai_content_and_prompt_optimization.jpeg" alt="Generative AI Content and Prompt Optimization">
+            <img src="certs/generative_ai_content_and_prompt_optimization.jpeg"
+                alt="Generative AI Content and Prompt Optimization">
         </div>
         <div class="print-cert-page">
-            <img src="certs/seo_visibility_keyword_research_and_auditing.jpeg" alt="SEO Visibility, Keyword Research, and Auditing">
+            <img src="certs/seo_visibility_keyword_research_and_auditing.jpeg"
+                alt="SEO Visibility, Keyword Research, and Auditing">
         </div>
         <div class="print-cert-page">
             <img src="certs/google_ai.png" alt="Google AI">
@@ -1614,19 +1750,23 @@
             <img src="certs/react_foundations_for_nextjs.png" alt="React Foundations for Next.js">
         </div>
         <div class="print-cert-page">
-            <img src="certs/ibm_devops_cloud_and_agile_foundations_specialization.png" alt="IBM DevOps, Cloud, and Agile Foundations Specialization">
+            <img src="certs/ibm_devops_cloud_and_agile_foundations_specialization.png"
+                alt="IBM DevOps, Cloud, and Agile Foundations Specialization">
         </div>
         <div class="print-cert-page">
-            <img src="certs/introduction_to_containers_w_docker_kubernetes_openshift.png" alt="Introduction to Containers w/ Docker, Kubernetes & OpenShift">
+            <img src="certs/introduction_to_containers_w_docker_kubernetes_openshift.png"
+                alt="Introduction to Containers w/ Docker, Kubernetes & OpenShift">
         </div>
         <div class="print-cert-page">
-            <img src="certs/introduction_to_agile_development_and_scrum.jpeg" alt="Introduction to Agile Development and Scrum">
+            <img src="certs/introduction_to_agile_development_and_scrum.jpeg"
+                alt="Introduction to Agile Development and Scrum">
         </div>
         <div class="print-cert-page">
             <img src="certs/introduction_to_devops.jpeg" alt="Introduction to DevOps">
         </div>
         <div class="print-cert-page">
-            <img src="certs/supervised_machine_learning_regression_and_classification.jpeg" alt="Supervised Machine Learning: Regression and Classification">
+            <img src="certs/supervised_machine_learning_regression_and_classification.jpeg"
+                alt="Supervised Machine Learning: Regression and Classification">
         </div>
         <div class="print-cert-page">
             <img src="certs/aws_cloud_quest_machine_learning.png" alt="AWS Cloud Quest: Machine Learning">
@@ -1653,13 +1793,15 @@
             <img src="certs/what_is_business_analysis.jpeg" alt="What Is Business Analysis?">
         </div>
         <div class="print-cert-page">
-            <img src="certs/key_technologies_for_business_specialization.jpeg" alt="Key Technologies for Business Specialization">
+            <img src="certs/key_technologies_for_business_specialization.jpeg"
+                alt="Key Technologies for Business Specialization">
         </div>
         <div class="print-cert-page">
             <img src="certs/what_is_data_science.png" alt="What is Data Science?">
         </div>
         <div class="print-cert-page">
-            <img src="certs/introduction_to_artificial_intelligence_ai.png" alt="Introduction to Artificial Intelligence (AI)">
+            <img src="certs/introduction_to_artificial_intelligence_ai.png"
+                alt="Introduction to Artificial Intelligence (AI)">
         </div>
         <div class="print-cert-page">
             <img src="certs/introduction_to_cloud_computing.png" alt="Introduction to Cloud Computing">
@@ -1671,16 +1813,19 @@
             <img src="certs/python_project_for_data_engineering.png" alt="Python Project for Data Engineering">
         </div>
         <div class="print-cert-page">
-            <img src="certs/introduction_to_relational_databases_rdbms.png" alt="Introduction to Relational Databases (RDBMS)">
+            <img src="certs/introduction_to_relational_databases_rdbms.png"
+                alt="Introduction to Relational Databases (RDBMS)">
         </div>
         <div class="print-cert-page">
             <img src="certs/automate_your_life_with_python.jpeg" alt="Automate your Life with python">
         </div>
         <div class="print-cert-page">
-            <img src="certs/python_bash_and_sql_essentials_for_data_engineering_specialization.png" alt="Python, Bash and SQL Essentials for Data Engineering Specialization">
+            <img src="certs/python_bash_and_sql_essentials_for_data_engineering_specialization.png"
+                alt="Python, Bash and SQL Essentials for Data Engineering Specialization">
         </div>
         <div class="print-cert-page">
-            <img src="certs/web_applications_and_command_line_tools_for_data_engineering.png" alt="Web Applications and Command-Line Tools for Data Engineering">
+            <img src="certs/web_applications_and_command_line_tools_for_data_engineering.png"
+                alt="Web Applications and Command-Line Tools for Data Engineering">
         </div>
         <div class="print-cert-page">
             <img src="certs/linux_and_bash_for_data_engineering.png" alt="Linux and Bash for Data Engineering">
@@ -1689,7 +1834,8 @@
             <img src="certs/python_and_pandas_for_data_engineering.png" alt="Python and Pandas for Data Engineering">
         </div>
         <div class="print-cert-page">
-            <img src="certs/scripting_with_python_and_sql_for_data_engineering.png" alt="Scripting with Python and SQL for Data Engineering">
+            <img src="certs/scripting_with_python_and_sql_for_data_engineering.png"
+                alt="Scripting with Python and SQL for Data Engineering">
         </div>
         <div class="print-cert-page">
             <img src="certs/google_data_analytics_specialization.jpeg" alt="Google Data Analytics Specialization">
@@ -1704,7 +1850,8 @@
             <img src="certs/data_analysis_with_r_programming.png" alt="Data Analysis with R Programming">
         </div>
         <div class="print-cert-page">
-            <img src="certs/google_data_analytics_capstone_complete_a_case_study.png" alt="Google Data Analytics Capstone: Complete a Case Study">
+            <img src="certs/google_data_analytics_capstone_complete_a_case_study.png"
+                alt="Google Data Analytics Capstone: Complete a Case Study">
         </div>
         <div class="print-cert-page">
             <img src="certs/google_data_analytics_certificate.png" alt="Google Data Analytics Certificate">
@@ -1716,13 +1863,15 @@
             <img src="certs/process_data_from_dirty_to_clean.png" alt="Process Data from Dirty to Clean">
         </div>
         <div class="print-cert-page">
-            <img src="certs/share_data_through_the_art_of_visualization.png" alt="Share Data Through the Art of Visualization">
+            <img src="certs/share_data_through_the_art_of_visualization.png"
+                alt="Share Data Through the Art of Visualization">
         </div>
         <div class="print-cert-page">
             <img src="certs/prepare_data_for_exploration.png" alt="Prepare Data for Exploration">
         </div>
         <div class="print-cert-page">
-            <img src="certs/ask_questions_to_make_data_driven_decisions.png" alt="Ask Questions to Make Data-Driven Decisions">
+            <img src="certs/ask_questions_to_make_data_driven_decisions.png"
+                alt="Ask Questions to Make Data-Driven Decisions">
         </div>
         <div class="print-cert-page">
             <img src="certs/foundations_data_data_everywhere.png" alt="Foundations: Data, Data, Everywhere">
@@ -1740,16 +1889,20 @@
             <img src="certs/crash_course_on_python.png" alt="Crash Course on Python">
         </div>
         <div class="print-cert-page">
-            <img src="certs/the_bits_and_bytes_of_computer_networking.png" alt="The Bits and Bytes of Computer Networking">
+            <img src="certs/the_bits_and_bytes_of_computer_networking.png"
+                alt="The Bits and Bytes of Computer Networking">
         </div>
         <div class="print-cert-page">
-            <img src="certs/system_administration_and_it_infrastructure_services.png" alt="System Administration and IT Infrastructure Services">
+            <img src="certs/system_administration_and_it_infrastructure_services.png"
+                alt="System Administration and IT Infrastructure Services">
         </div>
         <div class="print-cert-page">
-            <img src="certs/operating_systems_and_you_becoming_a_power_user.png" alt="Operating Systems and You: Becoming a Power User">
+            <img src="certs/operating_systems_and_you_becoming_a_power_user.png"
+                alt="Operating Systems and You: Becoming a Power User">
         </div>
         <div class="print-cert-page">
-            <img src="certs/it_security_defense_against_the_digital_dark_arts.png" alt="IT Security: Defense against the digital dark arts">
+            <img src="certs/it_security_defense_against_the_digital_dark_arts.png"
+                alt="IT Security: Defense against the digital dark arts">
         </div>
     </div>
 
