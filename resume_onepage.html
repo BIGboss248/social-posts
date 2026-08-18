@@ -174,7 +174,7 @@
             margin-top: 2px;
         }
 
-        /* 2-Column Layout (Calculated to 100% max width) */
+        /* 2-Column Layout */
         .resume-grid {
             display: flex;
             justify-content: space-between;
@@ -482,7 +482,7 @@
             font-weight: normal;
         }
 
-        /* PERFECT STRICT 1-PAGE PRINT MEDIA SETTINGS */
+        /* FULL-COLOR PRINT MEDIA SETTINGS FORCED */
         @media print {
             @page {
                 size: A4 portrait;
@@ -491,11 +491,14 @@
 
             * {
                 box-sizing: border-box !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
             }
 
             html, body {
                 background: #ffffff !important;
-                color: #000000 !important;
+                color: #0f172a !important;
                 font-size: 9.5pt !important;
                 width: 100% !important;
                 height: 100% !important;
@@ -530,35 +533,31 @@
 
             .header-main h1 {
                 font-size: 18pt !important;
+                color: #0f172a !important;
             }
 
             .header-main .title-sub {
                 font-size: 10pt !important;
-            }
-
-            .contact-socials {
-                margin-top: 4px !important;
-                gap: 3px 10px !important;
-            }
-
-            .contact-item {
-                font-size: 8.5pt !important;
+                color: #0d9488 !important;
             }
 
             .certs-counter-badge {
                 padding: 4px 8px !important;
-                border-right-width: 3pt !important;
+                border-right: 3pt solid #0d9488 !important;
+                background: #0f172a !important;
+                color: #ffffff !important;
             }
 
             .certs-counter-badge .num {
                 font-size: 12pt !important;
+                color: #2dd4bf !important;
             }
 
             .certs-counter-badge .lbl {
                 font-size: 8pt !important;
+                color: #cbd5e1 !important;
             }
 
-            /* FLEX LAYOUT FOR GUARANTEED FIT WITHOUT OVERFLOW */
             .resume-grid {
                 display: flex !important;
                 flex-direction: row !important;
@@ -583,6 +582,11 @@
                 margin-bottom: 5px !important;
                 padding-bottom: 2px !important;
                 border-bottom: 1.5pt solid #cbd5e1 !important;
+                color: #0f172a !important;
+            }
+
+            .sec-title svg {
+                fill: #0d9488 !important;
             }
 
             .section-block {
@@ -594,11 +598,20 @@
             .skill-pill {
                 padding: 1px 4px !important;
                 font-size: 8pt !important;
-                border-color: #cbd5e1 !important;
+                border: 1px solid #cbd5e1 !important;
+                background-color: #f8fafc !important;
+                color: #0f172a !important;
+            }
+
+            .skill-pill.highlight {
+                background-color: #f0fdfa !important;
+                border-color: #99f6e4 !important;
+                color: #0f766e !important;
             }
 
             .edu-degree {
                 font-size: 9pt !important;
+                color: #0f172a !important;
             }
 
             .edu-school, .edu-detail {
@@ -613,10 +626,17 @@
 
             .exp-role {
                 font-size: 9.5pt !important;
+                color: #0f172a !important;
             }
 
-            .exp-company, .exp-date {
+            .exp-company {
+                color: #0d9488 !important;
                 font-size: 8pt !important;
+            }
+
+            .exp-date {
+                font-size: 8pt !important;
+                background-color: #f1f5f9 !important;
             }
 
             .exp-bullets li {
@@ -625,15 +645,21 @@
                 line-height: 1.3 !important;
             }
 
+            .exp-bullets li::before {
+                color: #0d9488 !important;
+            }
+
             .proj-card {
                 padding: 5px 7px !important;
                 margin-bottom: 5px !important;
                 page-break-inside: avoid !important;
                 break-inside: avoid !important;
+                border: 1px solid #e2e8f0 !important;
             }
 
             .proj-title {
                 font-size: 9pt !important;
+                color: #0f172a !important;
             }
 
             .proj-desc {
@@ -645,6 +671,8 @@
             .proj-tech-tag {
                 font-size: 7.5pt !important;
                 padding: 0.5px 3.5px !important;
+                background-color: #f1f5f9 !important;
+                color: #475569 !important;
             }
 
             .cert-item-mini {
@@ -653,14 +681,18 @@
                 padding-bottom: 2.5px !important;
             }
 
+            .cert-issuer.google { background: #dbeafe !important; color: #1e40af !important; }
+            .cert-issuer.ibm { background: #e0e7ff !important; color: #3730a3 !important; }
+            .cert-issuer.aws { background: #fef3c7 !important; color: #92400e !important; }
+
             .cert-verify-link {
                 font-size: 8pt !important;
                 margin-top: 4px !important;
+                color: #0d9488 !important;
             }
 
             a {
                 text-decoration: none !important;
-                color: inherit !important;
             }
         }
     </style>
@@ -701,13 +733,17 @@
                         <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
                         github.com/BIGboss248
                     </a>
+                    <a href="https://orcid.org/0009-0004-9921-7273" target="_blank" class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-3.08 14.28H7.34V8.72h1.58v7.56zm-.79-8.48c-.52 0-.94-.43-.94-.95s.42-.95.94-.95.95.43.95.95-.43.95-.95.95zm8.79 4.38c0 2.26-1.52 4.1-4.22 4.1h-2.6V8.72h2.64c2.61 0 4.18 1.83 4.18 3.46zm-1.67 0c0-1.27-.89-2.31-2.43-2.31h-1.07v4.61h1.07c1.58 0 2.43-1.05 2.43-2.3z"/></svg>
+                        orcid.org/0009-0004-9921-7273
+                    </a>
                 </div>
             </div>
 
             <!-- 57 Certifications Highlight Badge -->
             <div class="certs-counter-badge">
-                <div class="num">۵۷ گواهینامه</div>
-                <div class="lbl">معتبر (Google, IBM, AWS)</div>
+                <div class="num">۵۷ مدرک + ۳ مقاله</div>
+                <div class="lbl">گواهینامه‌ها و مقالات پژوهشی معتبر</div>
             </div>
         </header>
 
@@ -851,7 +887,7 @@
 
             </aside>
 
-            <!-- Left Column (RTL Main Area): Experience, Projects & Summary -->
+            <!-- Left Column (RTL Main Area): Experience, Projects, Publications & Summary -->
             <main class="left-col">
 
                 <!-- Summary Profile -->
@@ -929,6 +965,69 @@
                             <span class="proj-tech-tag">Payload CMS</span>
                             <span class="proj-tech-tag">Corporate Blog</span>
                             <span class="proj-tech-tag">Technical SEO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publications Section -->
+                <div class="section-block">
+                    <h2 class="sec-title">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                        مقالات علمی و پژوهش‌های منتشرشده (Publications)
+                    </h2>
+
+                    <!-- Publication 1 -->
+                    <div class="proj-card">
+                        <div class="proj-title">
+                            تحلیل حس اخبار اقتصادی با NLP و یادگیری ماشین در بورس کالای ایران
+                            <a href="https://doi.org/10.61838/jafci.485" target="_blank" style="font-size: 9.5px; color: var(--accent); direction: ltr; font-weight: 700;">DOI: 10.61838/jafci.485 &rarr;</a>
+                        </div>
+                        <div class="proj-desc">
+                            <strong>نشریه حسابداری، امور مالی و هوش محاسباتی (AFCI - ۱۴۰۴ / 2025):</strong> مدل ترکیبی ParsBERT-XGBoost روی ۴۵٬۸۳۶ خبر اقتصادی؛ کاهش ۲۷.۶٪ خطای پیش‌بینی قیمت فولاد، دقت جهت‌گیری ۷۲.۶٪ و نسبت شارپ ۱.۷۶.
+                        </div>
+                        <div class="proj-techs">
+                            <span class="proj-tech-tag">NLP</span>
+                            <span class="proj-tech-tag">ParsBERT</span>
+                            <span class="proj-tech-tag">XGBoost</span>
+                            <span class="proj-tech-tag">LSTM</span>
+                            <span class="proj-tech-tag">Sentiment Analysis</span>
+                            <span class="proj-tech-tag">Commodity Exchange</span>
+                        </div>
+                    </div>
+
+                    <!-- Publication 2 -->
+                    <div class="proj-card">
+                        <div class="proj-title">
+                            پیش‌بینی نوسانات قیمت فولاد با مدل‌های یادگیری ماشین و عمیق (DQN / LSTM)
+                            <a href="https://doi.org/10.61838/bmfopen.545" target="_blank" style="font-size: 9.5px; color: var(--accent); direction: ltr; font-weight: 700;">DOI: 10.61838/bmfopen.545 &rarr;</a>
+                        </div>
+                        <div class="proj-desc">
+                            <strong>نشریه BMF Open (2025):</strong> ارزیابی تطبیقی مدل‌های LSTM، Deep Q-Network و XGBoost در بازار فولاد و EUR/USD؛ دستیابی به دقت ۷۰.۸٪ با LSTM و بازده سالانه ۲۸.۹٪ با نسبت شارپ ۱.۸۶ با مدل DQN.
+                        </div>
+                        <div class="proj-techs">
+                            <span class="proj-tech-tag">Deep Q-Network</span>
+                            <span class="proj-tech-tag">LSTM</span>
+                            <span class="proj-tech-tag">XGBoost</span>
+                            <span class="proj-tech-tag">Forecasting</span>
+                            <span class="proj-tech-tag">Steel Market</span>
+                        </div>
+                    </div>
+
+                    <!-- Publication 3 -->
+                    <div class="proj-card">
+                        <div class="proj-title">
+                            اتوماسیون زیرساخت IT، معماری وب و بهینه‌سازی فنی در زنجیره فولاد
+                            <a href="https://doi.org/10.61838/msesj.477" target="_blank" style="font-size: 9.5px; color: var(--accent); direction: ltr; font-weight: 700;">DOI: 10.61838/msesj.477 &rarr;</a>
+                        </div>
+                        <div class="proj-desc">
+                            <strong>نشریه MSES (2025):</strong> ارزیابی تجربی اتوماسیون سرور با Bash، بهینه‌سازی کوئری‌های PostgreSQL، مهاجرت به Next.js SSR و سئو تکنیکال در ارتقای Core Web Vitals و افزایش نرخ تبدیل B2B شرکت بهار تجارت.
+                        </div>
+                        <div class="proj-techs">
+                            <span class="proj-tech-tag">IT Automation</span>
+                            <span class="proj-tech-tag">PostgreSQL</span>
+                            <span class="proj-tech-tag">Next.js SSR</span>
+                            <span class="proj-tech-tag">Technical SEO</span>
+                            <span class="proj-tech-tag">B2B Conversion</span>
                         </div>
                     </div>
                 </div>
