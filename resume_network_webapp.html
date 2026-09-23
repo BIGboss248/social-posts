@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رزومه امین جمالی | مهندس ارشد شبکه، امنیت و توسعه‌دهنده وب</title>
+    <!-- Google Fonts: Vazirmatn & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;       /* Slate 900 */
+            --primary-light: #1e293b; /* Slate 800 */
+            --accent: #0284c7;        /* Sky Blue 600 */
+            --accent-dark: #0369a1;
+            --accent-teal: #0d9488;    /* Teal 600 */
+            --accent-bg: #f0f9ff;     /* Sky 50 */
+            --text-dark: #0f172a;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #cbd5e1;
+            --border-light: #e2e8f0;
+            --font-main: 'Vazirmatn', Tahoma, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.48;
+            font-size: 11.2px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page-wrapper {
+            max-width: 960px;
+            margin: 18px auto;
+            padding: 0 15px;
+        }
+
+        .action-bar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .action-btn {
+            background-color: var(--accent);
+            color: #ffffff;
+            border: none;
+            padding: 8px 18px;
+            font-family: var(--font-main);
+            font-size: 12.5px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 5px rgba(2, 132, 199, 0.25);
+            text-decoration: none;
+        }
+
+        .action-btn:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        .action-btn svg {
+            width: 15px;
+            height: 15px;
+            fill: currentColor;
+        }
+
+        .resume-sheet {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-light);
+            padding: 22px 26px;
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .header-main h1 {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--text-dark);
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+        }
+
+        .header-main .title-sub {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent-dark);
+            margin-top: 3px;
+        }
+
+        .contact-socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 14px;
+            margin-top: 7px;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 10.8px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            direction: ltr;
+            transition: color 0.15s ease;
+        }
+
+        .contact-item:hover {
+            color: var(--accent);
+        }
+
+        .contact-item svg {
+            width: 13px;
+            height: 13px;
+            fill: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .certs-counter-badge {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: #ffffff;
+            padding: 8px 14px;
+            border-radius: 8px;
+            text-align: center;
+            border-right: 4px solid var(--accent);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+        }
+
+        .certs-counter-badge .num {
+            font-size: 15px;
+            font-weight: 800;
+            color: #38bdf8;
+            line-height: 1.1;
+        }
+
+        .certs-counter-badge .lbl {
+            font-size: 9.5px;
+            color: #cbd5e1;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        /* 2-Column Grid */
+        .resume-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .sidebar-col {
+            width: 34%;
+            flex-shrink: 0;
+        }
+
+        .main-col {
+            width: 63.5%;
+            flex-grow: 1;
+        }
+
+        .section-block {
+            margin-bottom: 12px;
+        }
+
+        .section-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .sec-title {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--primary);
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 2.5px;
+            margin-bottom: 7px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .sec-title svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--accent);
+        }
+
+        /* Skills Matrix */
+        .skill-group {
+            margin-bottom: 7px;
+        }
+
+        .skill-group-title {
+            font-size: 10.2px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 3px;
+            border-right: 2.5px solid var(--accent);
+            padding-right: 5px;
+        }
+
+        .skills-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+        }
+
+        .skill-pill {
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+            padding: 1.5px 5px;
+            border-radius: 4px;
+            font-size: 9.5px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .skill-pill.highlight {
+            background-color: var(--accent-bg);
+            border-color: #bae6fd;
+            color: var(--accent-dark);
+            font-weight: 700;
+        }
+
+        /* Certifications Box */
+        .cert-highlight-box {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            padding: 7px 8px;
+            margin-top: 4px;
+        }
+
+        .cert-item-mini {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 9.8px;
+            margin-bottom: 3.5px;
+            padding-bottom: 3.5px;
+            border-bottom: 1px dashed var(--border-light);
+        }
+
+        .cert-item-mini:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .cert-name {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .cert-issuer {
+            font-size: 8.8px;
+            font-weight: 700;
+            padding: 1px 4px;
+            border-radius: 3px;
+            background: #e2e8f0;
+            color: #334155;
+            white-space: nowrap;
+        }
+
+        .cert-issuer.google { background: #dbeafe; color: #1e40af; }
+        .cert-issuer.ibm { background: #e0e7ff; color: #3730a3; }
+        .cert-issuer.aws { background: #fef3c7; color: #92400e; }
+        .cert-issuer.vercel { background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; }
+
+        .cert-verify-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 9.8px;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            margin-top: 5px;
+        }
+
+        .cert-verify-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Education */
+        .edu-item {
+            margin-bottom: 6px;
+            padding-right: 6px;
+            border-right: 2.5px solid var(--accent);
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-degree {
+            font-weight: 800;
+            font-size: 10.8px;
+            color: var(--text-dark);
+        }
+
+        .edu-school {
+            font-size: 9.8px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .edu-detail {
+            font-size: 9.2px;
+            color: var(--text-main);
+            margin-top: 1px;
+        }
+
+        /* Languages Box */
+        .lang-card {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            padding: 6px 8px;
+        }
+
+        .lang-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10px;
+            margin-bottom: 3px;
+        }
+
+        .lang-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .lang-name {
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .lang-badge {
+            font-size: 9px;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .lang-badge.en {
+            background-color: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+        }
+
+        .lang-badge.fa {
+            background-color: #f1f5f9;
+            color: #334155;
+        }
+
+        .lang-badge.de {
+            background-color: #f1f5f9;
+            color: #64748b;
+        }
+
+        /* Summary Profile */
+        .summary-box {
+            font-size: 10.5px;
+            line-height: 1.55;
+            color: var(--text-main);
+            margin-bottom: 11px;
+            text-align: justify;
+            background-color: #f8fafc;
+            padding: 8px 11px;
+            border-radius: 6px;
+            border-right: 3px solid var(--accent);
+        }
+
+        /* Experience Item */
+        .exp-item {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .exp-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .exp-role {
+            font-size: 11.5px;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .exp-date {
+            font-size: 9.2px;
+            color: var(--text-muted);
+            font-weight: 600;
+            background-color: #f1f5f9;
+            padding: 1px 5px;
+            border-radius: 3px;
+        }
+
+        .exp-company {
+            font-size: 10.2px;
+            font-weight: 700;
+            color: var(--accent-dark);
+            margin-bottom: 3px;
+        }
+
+        .exp-bullets {
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .exp-bullets li {
+            position: relative;
+            padding-right: 11px;
+            font-size: 10px;
+            margin-bottom: 3px;
+            line-height: 1.4;
+            text-align: justify;
+        }
+
+        .exp-bullets li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 12px;
+            position: absolute;
+            right: 0;
+            top: -2px;
+        }
+
+        /* Project Cards */
+        .proj-card {
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            padding: 6px 8px;
+            margin-bottom: 5px;
+            background-color: #ffffff;
+        }
+
+        .proj-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .proj-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .proj-title {
+            font-size: 10.5px;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .proj-link {
+            font-size: 9px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+            direction: ltr;
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .proj-link:hover {
+            text-decoration: underline;
+            color: var(--accent-dark);
+        }
+
+        .proj-desc {
+            font-size: 9.5px;
+            color: var(--text-main);
+            margin: 2px 0 3.5px 0;
+            line-height: 1.35;
+            text-align: justify;
+        }
+
+        .proj-techs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+        }
+
+        .proj-tech-tag {
+            font-size: 8.5px;
+            font-weight: 600;
+            background-color: #f1f5f9;
+            color: var(--text-muted);
+            padding: 0.5px 4px;
+            border-radius: 3px;
+            direction: ltr;
+        }
+
+        /* PRINT MEDIA STYLES FOR EXACT A4 FIT */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 4.5mm 5.5mm;
+            }
+
+            * {
+                box-sizing: border-box !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            html, body {
+                background: #ffffff !important;
+                color: #0f172a !important;
+                font-size: 8.8pt !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .action-bar {
+                display: none !important;
+            }
+
+            .page-wrapper {
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .resume-sheet {
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                width: 100% !important;
+            }
+
+            header {
+                padding-bottom: 3px !important;
+                margin-bottom: 5px !important;
+                border-bottom: 1.5pt solid #cbd5e1 !important;
+            }
+
+            .header-main h1 {
+                font-size: 15.5pt !important;
+            }
+
+            .header-main .title-sub {
+                font-size: 9pt !important;
+                color: #0284c7 !important;
+            }
+
+            .contact-item {
+                font-size: 7.8pt !important;
+            }
+
+            .certs-counter-badge {
+                padding: 3px 6px !important;
+                border-right: 3pt solid #0284c7 !important;
+            }
+
+            .certs-counter-badge .num {
+                font-size: 10pt !important;
+            }
+
+            .certs-counter-badge .lbl {
+                font-size: 7.2pt !important;
+            }
+
+            .resume-grid {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                width: 100% !important;
+                gap: 11px !important;
+            }
+
+            .sidebar-col {
+                width: 34% !important;
+                flex-shrink: 0 !important;
+            }
+
+            .main-col {
+                width: 64.5% !important;
+                flex-grow: 1 !important;
+            }
+
+            .sec-title {
+                font-size: 8.8pt !important;
+                margin-bottom: 3.5px !important;
+                padding-bottom: 1.5px !important;
+                border-bottom: 1.5pt solid #cbd5e1 !important;
+            }
+
+            .section-block {
+                margin-bottom: 5px !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .skill-group {
+                margin-bottom: 4px !important;
+            }
+
+            .skill-group-title {
+                font-size: 8.2pt !important;
+            }
+
+            .skill-pill {
+                padding: 0.5px 3px !important;
+                font-size: 7.2pt !important;
+            }
+
+            .summary-box {
+                font-size: 7.8pt !important;
+                margin-bottom: 5px !important;
+                padding: 4px 7px !important;
+                line-height: 1.25 !important;
+            }
+
+            .exp-role {
+                font-size: 8.5pt !important;
+            }
+
+            .exp-company {
+                font-size: 7.8pt !important;
+                color: #0284c7 !important;
+            }
+
+            .exp-date {
+                font-size: 7.2pt !important;
+            }
+
+            .exp-bullets li {
+                font-size: 7.5pt !important;
+                margin-bottom: 1px !important;
+                line-height: 1.2 !important;
+            }
+
+            .proj-card {
+                padding: 3.5px 5px !important;
+                margin-bottom: 3.5px !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .proj-title {
+                font-size: 8.2pt !important;
+            }
+
+            .proj-link {
+                font-size: 7.2pt !important;
+            }
+
+            .proj-desc {
+                font-size: 7.3pt !important;
+                margin: 1px 0 2px 0 !important;
+                line-height: 1.18 !important;
+            }
+
+            .proj-tech-tag {
+                font-size: 6.8pt !important;
+                padding: 0 3px !important;
+            }
+
+            .cert-item-mini {
+                font-size: 7.2pt !important;
+                margin-bottom: 1.5px !important;
+                padding-bottom: 1.5px !important;
+            }
+
+            .edu-degree {
+                font-size: 8.2pt !important;
+            }
+
+            .edu-school, .edu-detail {
+                font-size: 7.2pt !important;
+            }
+
+            .lang-badge.en {
+                background: #dbeafe !important;
+                color: #1e40af !important;
+            }
+
+            a {
+                text-decoration: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <!-- Action Bar -->
+    <div class="action-bar">
+        <button class="action-btn" onclick="window.print()">
+            <svg viewBox="0 0 24 24">
+                <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+            </svg>
+            چاپ / ذخیره PDF
+        </button>
+    </div>
+
+    <!-- Resume Sheet -->
+    <div class="resume-sheet">
+
+        <!-- Header -->
+        <header>
+            <div class="header-main">
+                <h1>امین جمالی</h1>
+                <div class="title-sub">کارشناس مهندسی حرفه‌ای کامپیوتر نرم‌افزار | مهندس ارشد شبکه، امنیت و توسعه‌دهنده وب و اپلیکیشن</div>
+                
+                <!-- Social Contacts -->
+                <div class="contact-socials">
+                    <a href="mailto:aminjamali79@gmail.com" class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        aminjamali79@gmail.com
+                    </a>
+                    <a href="https://linkedin.com/in/amin-jamali2000" target="_blank" class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                        linkedin.com/in/amin-jamali2000
+                    </a>
+                    <a href="https://github.com/BIGboss248" target="_blank" class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                        github.com/BIGboss248
+                    </a>
+                    <a href="https://orcid.org/0009-0004-9921-7273" target="_blank" class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-3.08 14.28H7.34V8.72h1.58v7.56zm-.79-8.48c-.52 0-.94-.43-.94-.95s.42-.95.94-.95.95.43.95.95-.43.95-.95.95zm8.79 4.38c0 2.26-1.52 4.1-4.22 4.1h-2.6V8.72h2.64c2.61 0 4.18 1.83 4.18 3.46zm-1.67 0c0-1.27-.89-2.31-2.43-2.31h-1.07v4.61h1.07c1.58 0 2.43-1.05 2.43-2.3z"/></svg>
+                        orcid.org/0009-0004-9921-7273
+                    </a>
+                </div>
+            </div>
+
+            <!-- Header Badge -->
+            <div class="certs-counter-badge">
+                <div class="num">۵۷ مدرک بین‌المللی</div>
+                <div class="lbl">Google • AWS • IBM • Vercel</div>
+            </div>
+        </header>
+
+        <!-- Main Grid Layout -->
+        <div class="resume-grid">
+
+            <!-- Sidebar Column (Right in RTL) -->
+            <aside class="sidebar-col">
+
+                <!-- Technical Skills -->
+                <div class="section-block">
+                    <h2 class="sec-title">
+                        <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.3C.5 6.7.9 9.8 2.9 11.8c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.6z"/></svg>
+                        مهارت‌های تخصصی
+                    </h2>
+
+                    <!-- Web & App Development -->
+                    <div class="skill-group">
+                        <div class="skill-group-title">توسعه وب و اپلیکیشن (Full-Stack)</div>
+                        <div class="skills-flex">
+                            <span class="skill-pill highlight">Next.js (SSR / SSG)</span>
+                            <span class="skill-pill highlight">React.js</span>
+                            <span class="skill-pill highlight">TypeScript</span>
+                            <span class="skill-pill highlight">Payload CMS</span>
+                            <span class="skill-pill highlight">MongoDB</span>
+                            <span class="skill-pill highlight">Flutter &amp; Firebase</span>
+                            <span class="skill-pill">RESTful APIs</span>
+                            <span class="skill-pill">Tailwind CSS</span>
+                            <span class="skill-pill">PostgreSQL / SQL</span>
+                        </div>
+                    </div>
+
+                    <!-- Networking & Security -->
+                    <div class="skill-group">
+                        <div class="skill-group-title">شبکه، امنیت و زیرساخت</div>
+                        <div class="skills-flex">
+                            <span class="skill-pill highlight">Multi-WAN Routing</span>
+                            <span class="skill-pill highlight">Cloudflare Zero Trust</span>
+                            <span class="skill-pill highlight">Cloudflare Tunnel</span>
+                            <span class="skill-pill highlight">Wazuh SIEM / XDR</span>
+                            <span class="skill-pill highlight">Site-to-Site VPN</span>
+                            <span class="skill-pill">AdGuard Home DNS</span>
+                            <span class="skill-pill">Active Directory &amp; GPO</span>
+                            <span class="skill-pill">Wi-Fi Roaming (802.11k/v/r)</span>
+                            <span class="skill-pill">Dual-Band Steering</span>
+                            <span class="skill-pill">CCTV / DVR &amp; NVR IP</span>
+                            <span class="skill-pill">Network OS Deployment</span>
+                        </div>
+                    </div>
+
+                    <!-- Cloud & DevOps -->
+                    <div class="skill-group">
+                        <div class="skill-group-title">سرور، کلاد و دواپس (Multi-Cloud)</div>
+                        <div class="skills-flex">
+                            <span class="skill-pill highlight">Linux VPS Servers</span>
+                            <span class="skill-pill highlight">Docker &amp; Containers</span>
+                            <span class="skill-pill">AWS (EC2, S3, Serverless)</span>
+                            <span class="skill-pill">GCP &amp; Azure</span>
+                            <span class="skill-pill">Oracle Cloud</span>
+                            <span class="skill-pill">Hetzner &amp; Vultr</span>
+                            <span class="skill-pill">GitHub Actions CI/CD</span>
+                            <span class="skill-pill">Cloudflare CDN / WAF</span>
+                            <span class="skill-pill">Bash Scripting</span>
+                            <span class="skill-pill">Python Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Certifications -->
+                <div class="section-block">
+                    <h2 class="sec-title">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-6V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                        گواهینامه‌های شاخص بین‌المللی
+                    </h2>
+                    
+                    <div class="cert-highlight-box">
+                        <div class="cert-item-mini">
+                            <span class="cert-name">Google AI Specialization</span>
+                            <span class="cert-issuer google">Google</span>
+                        </div>
+                        <div class="cert-item-mini">
+                            <span class="cert-name">React Foundations for Next.js</span>
+                            <span class="cert-issuer vercel">Vercel</span>
+                        </div>
+                        <div class="cert-item-mini">
+                            <span class="cert-name">The Bits and Bytes of Networking</span>
+                            <span class="cert-issuer google">Google</span>
+                        </div>
+                        <div class="cert-item-mini">
+                            <span class="cert-name">Google IT Support Specialization</span>
+                            <span class="cert-issuer google">Google</span>
+                        </div>
+                        <div class="cert-item-mini">
+                            <span class="cert-name">System Administration &amp; IT Services</span>
+                            <span class="cert-issuer google">Google</span>
+                        </div>
+                        <div class="cert-item-mini">
+                            <span class="cert-name">IT Security: Defense Against Dark Arts</span>
+                            <span class="cert-issuer google">Google</span>
+                        </div>
+                        <div class="cert-item-mini">
+                            <span class="cert-name">IBM Containers (Docker &amp; K8s)</span>
+                            <span class="cert-issuer ibm">IBM</span>
+                        </div>
+                        <div class="cert-item-mini">
+                            <span class="cert-name">AWS Solutions Architect &amp; Serverless</span>
+                            <span class="cert-issuer aws">AWS</span>
+                        </div>
+                        <div class="cert-item-mini">
+                            <span class="cert-name">Learning REST APIs</span>
+                            <span class="cert-issuer">LinkedIn</span>
+                        </div>
+                    </div>
+
+                    <a href="https://www.linkedin.com/in/amin-jamali2000/details/certifications/" target="_blank" class="cert-verify-link">
+                        <span>مشاهده آنلاین کلیه ۵۷ مدرک در لینکدین &larr;</span>
+                    </a>
+                </div>
+
+                <!-- Languages -->
+                <div class="section-block">
+                    <h2 class="sec-title">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                        زبان‌های خارجی
+                    </h2>
+                    <div class="lang-card">
+                        <div class="lang-row">
+                            <span class="lang-name">انگلیسی (English)</span>
+                            <span class="lang-badge en">تسلط کامل و روان (Fluent)</span>
+                        </div>
+                        <div class="lang-row">
+                            <span class="lang-name">فارسی (Persian)</span>
+                            <span class="lang-badge fa">زبان مادری (Native)</span>
+                        </div>
+                        <div class="lang-row">
+                            <span class="lang-name">آلمانی (German)</span>
+                            <span class="lang-badge de">مقدماتی</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="section-block">
+                    <h2 class="sec-title">
+                        <svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+                        سوابق تحصیلی
+                    </h2>
+
+                    <div class="edu-item">
+                        <div class="edu-degree">کارشناسی مهندسی حرفه‌ای کامپیوتر نرم‌افزار</div>
+                        <div class="edu-school">دانشگاه آزاد اسلامی اصفهان (خوراسگان)</div>
+                        <div class="edu-detail">تمرکز بر مهندسی نرم‌افزار، توسعه وب، شبکه‌های کامپیوتری و سیستم‌های عامل</div>
+                    </div>
+
+                    <div class="edu-item">
+                        <div class="edu-degree">کارشناسی مدیریت مالی</div>
+                        <div class="edu-school">دانشگاه آزاد اسلامی اصفهان (خوراسگان)</div>
+                        <div class="edu-detail">تحلیل داده‌ها، بهینه‌سازی فرآیندهای مالی و هوش تجاری</div>
+                    </div>
+
+                    <div class="edu-item">
+                        <div class="edu-degree">دیپلم علوم ریاضی و فیزیک</div>
+                        <div class="edu-school">سازمان ملی پرورش استعدادهای درخشان (سمپاد)</div>
+                        <div class="edu-detail">دبیرستان شهید اژه‌ای اصفهان</div>
+                    </div>
+                </div>
+
+            </aside>
+
+            <!-- Main Content Column (Left in RTL) -->
+            <main class="main-col">
+
+                <!-- Summary Profile -->
+                <div class="summary-box">
+                    <strong>مهندس نرم‌افزار و متخصص ارشد شبکه، امنیت و توسعه وب و اپلیکیشن</strong> با بیش از ۵ سال تجربه کاری ممتد و وفادارانه در شرکت بهار تجارت در زمینه مهندسی و اجرای صفر تا صد پروژه‌های نرم‌افزاری تحت وب (با Next.js، React، TypeScript، Payload CMS، MongoDB و Flutter)، استقرار کانتینری در محیط‌های چندابری (AWS, Hetzner, Oracle, Vultr, GCP, Azure) و طراحی و مدیریت جامع زیرساخت‌های شبکه و امنیت سازمانی (Multi-WAN Load Balancing، تونل‌های Site-to-Site VPN، پلتفرم امنیتی Wazuh SIEM، سرویس‌های Cloudflare Zero Trust &amp; Tunnel و اکتیو دایرکتوری). <strong>دارای تسلط کامل و مکالمه روان به زبان انگلیسی</strong> و دارنده ۵۷ گواهینامه معتبر بین‌المللی از مراجع برتر جهانی (Google, AWS, IBM, Vercel).
+                </div>
+
+                <!-- Professional Experience -->
+                <div class="section-block">
+                    <h2 class="sec-title">
+                        <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+                        سوابق شغلی و تجارب اجرایی
+                    </h2>
+
+                    <!-- Unified Experience: Bahar Tejarat -->
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-role">مهندس ارشد نرم‌افزار، توسعه وب و زیرساخت شبکه و امنیت</span>
+                            <span class="exp-date">۱۳۹۹ - اکنون (بیش از ۵ سال)</span>
+                        </div>
+                        <div class="exp-company">شرکت بهار تجارت (Bahar Tejarat Co.)</div>
+                        <ul class="exp-bullets">
+                            <li><strong>توسعه فول‌استک وب‌اپلیکیشن‌ها و سرویس‌های نرم‌افزاری:</strong> طراحی، برنامه‌نویسی و استقرار پلتفرم‌های تحت وب پیشرفته و وب‌سایت‌های تجاری شرکت بر پایه Next.js (SSR/SSG)، React.js، TypeScript و Tailwind CSS با بک‌اند مدرن Payload CMS و پایگاه‌های داده MongoDB و PostgreSQL، به همراه ساخت اپلیکیشن‌های موبایل با Flutter و فایربیس.</li>
+                            <li><strong>معماری Multi-Cloud و استقرار کانتینری (DevOps):</strong> میزبانی و راه‌اندازی سرورهای VPS لینوکسی روی ارائه‌دهندگان معتبر بین‌المللی (AWS, GCP, Azure, Oracle Cloud, Hetzner, Vultr)، کانتینری‌سازی سرویس‌ها با Docker و ایجاد خطوط لوله استقرار خودکار با GitHub Actions.</li>
+                            <li><strong>امنیت ابری با Cloudflare Zero Trust و Cloudflare Tunnel:</strong> استقرار پلتفرم Cloudflare Zero Trust و پیکربندی تونل‌های امن Cloudflare Tunnel (cloudflared) جهت ایجاد دسترسی ریموت رمزنگاری‌شده به سرویس‌های داخلی شرکت بدون نیاز به باز کردن پورت‌های آسیب‌پذیر و محافظت لایه لبه با CDN و فایروال WAF.</li>
+                            <li><strong>معماری Multi-WAN و لود بالانسینگ شبکه:</strong> طراحی، پیاده‌سازی و مدیریت شبکه سازمانی با ۳۰ تا بیش از ۵۰ دستگاه و کلاینت فعال؛ راه‌اندازی لود بالانسینگ هوشمند روی ۳ آپ‌لینک مستقل WAN با Failover آنی جهت تضمین پایداری ۹۹.۹٪ اتصال اینترنت.</li>
+                            <li><strong>امنیت سازمانی و مانیتورینگ متمرکز با Wazuh SIEM/XDR:</strong> استقرار سرورهای Windows Server و پلتفرم امنیت سازمانی Wazuh جهت پایش متمرکز لاگ‌ها، مانیتورینگ بلادرنگ رویدادهای امنیتی، ارزیابی آسیب‌پذیری‌ها و تشخیص نفوذ در سراسر اندپوینت‌ها.</li>
+                            <li><strong>اتصال شعب با Site-to-Site VPN و فیلترینگ AdGuard Home:</strong> طراحی و راه‌اندازی تونل‌های رمزنگاری‌شده Site-to-Site VPN برای اتصال امن و بی‌وقفه شعب شرکت به مرکز داده؛ استقرار AdGuard Home جهت فیلترینگ هوشمند DNS و مهار بدافزارها.</li>
+                            <li><strong>مدیریت Active Directory با استانداردهای امنیتی:</strong> پیکربندی و نگهداری متمرکز Active Directory Domain Services (AD DS)، اعمال پالیسی‌های سخت‌گیرانه امنیتی (GPO) با تفکیک سطوح دسترسی (Least Privilege) و استقرار خودکار سیستم‌های عامل ویندوز و لینوکس تحت شبکه.</li>
+                            <li><strong>شبکه بی‌سیم متمرکز با رومینگ هوشمند و نظارت تصویری:</strong> راه‌اندازی معماری Multi-AP با رومینگ بی‌وقفه (802.11k/v/r) و هدایت باند فرکانسی (Band Steering بین 2.4GHz و 5GHz)؛ مدیریت یکپارچه دوربین‌های امنیتی IP و دستگاه‌های NVR/DVR با تفکیک ساب‌نت‌ها.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Featured Projects -->
+                <div class="section-block">
+                    <h2 class="sec-title">
+                        <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                        پروژه‌های شاخص وب، اپلیکیشن و اتوماسیون زیرساخت
+                    </h2>
+
+                    <!-- Project 1: Setayesh Parts -->
+                    <div class="proj-card">
+                        <div class="proj-header">
+                            <div class="proj-title">پلتفرم تجاری قطعات یدکی و تیونینگ ستایش (Setayesh Parts)</div>
+                            <a href="https://setayesh.aminjamali.site/" target="_blank" class="proj-link">
+                                setayesh.aminjamali.site &rarr;
+                            </a>
+                        </div>
+                        <div class="proj-desc">
+                            پلتفرم جامع کاتالوگ آنلاین و فروشگاهی تخصصی تیونینگ و عملکرد خودرو توسعه‌یافته با فرانت‌اند Next.js و بک‌اند اختصاصی Payload CMS متصل به دیتابیس MongoDB. استقرار کانتینری با Docker بر روی VPS لینوکس، اتوماسیون CI/CD با GitHub Actions و بهینه‌سازی لایه لبه با Cloudflare CDN و فایروال WAF.
+                        </div>
+                        <div class="proj-techs">
+                            <span class="proj-tech-tag">Next.js</span>
+                            <span class="proj-tech-tag">TypeScript</span>
+                            <span class="proj-tech-tag">Payload CMS</span>
+                            <span class="proj-tech-tag">MongoDB</span>
+                            <span class="proj-tech-tag">Docker</span>
+                            <span class="proj-tech-tag">Linux VPS</span>
+                            <span class="proj-tech-tag">Cloudflare</span>
+                            <span class="proj-tech-tag">E-Commerce</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Bahar Trade Co. -->
+                    <div class="proj-card">
+                        <div class="proj-header">
+                            <div class="proj-title">وب‌سایت رسمی و سامانه چندزبانه شرکت بهار تجارت (Bahar Trade Co.)</div>
+                            <a href="https://bahartradeco.com/en" target="_blank" class="proj-link">
+                                bahartradeco.com/en &rarr;
+                            </a>
+                        </div>
+                        <div class="proj-desc">
+                            طراحی و توسعه پورتال رسمی شرکتی و سامانه چندزبانه تامین و تحلیل بازار فولاد با رندر سمت سرور (Next.js SSR)، معماری بک‌اند پیشرفته Payload CMS و پایگاه داده MongoDB به همراه PostgreSQL؛ مقاله پژوهشی مرتبط در نشریه بین‌المللی MSES 2025 به چاپ رسیده است.
+                        </div>
+                        <div class="proj-techs">
+                            <span class="proj-tech-tag">Next.js SSR</span>
+                            <span class="proj-tech-tag">Payload CMS</span>
+                            <span class="proj-tech-tag">MongoDB</span>
+                            <span class="proj-tech-tag">REST APIs</span>
+                            <span class="proj-tech-tag">PostgreSQL</span>
+                            <span class="proj-tech-tag">Technical SEO</span>
+                            <span class="proj-tech-tag">Corporate Portal</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Azad Bazar Marketplace -->
+                    <div class="proj-card">
+                        <div class="proj-header">
+                            <div class="proj-title">پلتفرم چندفروشندگی و بازار آنلاین آزاد بازار (Azad Bazar)</div>
+                            <a href="https://azadbazar.isfahan.iau.ir/" target="_blank" class="proj-link">
+                                azadbazar.isfahan.iau.ir &rarr;
+                            </a>
+                        </div>
+                        <div class="proj-desc">
+                            طراحی و راه‌اندازی زیرساخت پلتفرم مارکت‌پلیس چندفروشندگی با همکاری شرکت «بهبود سیستم پاسارگاد» (مستقر در مرکز رشد دانشگاه آزاد اسلامی) مبتنی بر وردپرس، ووکامرس و سیستم چندفروشندگی Dokan و واگذاری و انتقال نهایی امتیاز و مدیریت سامانه به دانشگاه آزاد اسلامی اصفهان.
+                        </div>
+                        <div class="proj-techs">
+                            <span class="proj-tech-tag">WordPress / PHP</span>
+                            <span class="proj-tech-tag">WooCommerce</span>
+                            <span class="proj-tech-tag">Dokan Marketplace</span>
+                            <span class="proj-tech-tag">MySQL / MariaDB</span>
+                            <span class="proj-tech-tag">Multi-Vendor E-Commerce</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Flutter App -->
+                    <div class="proj-card">
+                        <div class="proj-header">
+                            <div class="proj-title">اپلیکیشن یادداشت‌برداری و داده‌های مالی فلاتر با فایربیس (Flutter Note &amp; Currency App)</div>
+                            <a href="https://github.com/BIGboss248/flutter-currency-project" target="_blank" class="proj-link">
+                                GitHub Repository &rarr;
+                            </a>
+                        </div>
+                        <div class="proj-desc">
+                            اپلیکیشن کراس‌پلتفرم توسعه‌یافته با فریم‌ورک Flutter و متصل به بک‌اند Firebase شامل احراز هویت امن کاربران (Authentication)، ذخیره‌سازی ابری یادداشت‌ها و اطلاعات برخط (Firestore / Realtime DB) با معماری ماژولار و مدیریت وضعیت پیشرفته.
+                        </div>
+                        <div class="proj-techs">
+                            <span class="proj-tech-tag">Flutter</span>
+                            <span class="proj-tech-tag">Dart</span>
+                            <span class="proj-tech-tag">Firebase Auth</span>
+                            <span class="proj-tech-tag">Cloud Firestore</span>
+                            <span class="proj-tech-tag">State Management</span>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
