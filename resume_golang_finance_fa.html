@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رزومه امین جمالی — مهندس نرم‌افزار بک‌اند (Go) و سیستم‌های مالی</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #0d9488;
+            --accent-hover: #0f766e;
+            --accent-light: #f0fdfa;
+            --text-main: #334155;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --bg-sidebar: #f8fafc;
+            --border-light: #e2e8f0;
+            --border-color: #cbd5e1;
+            --font-family: 'Vazirmatn', Tahoma, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: #eef2f6;
+            color: var(--text-main);
+            line-height: 1.65;
+            font-size: 13.5px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .resume {
+            max-width: 900px;
+            margin: 28px auto;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px -12px rgba(15, 23, 42, .25);
+        }
+
+        /* ---------- Header ---------- */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: #fff;
+            padding: 26px 34px 24px;
+            border-bottom: 4px solid var(--accent);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 20px;
+        }
+
+        .name {
+            font-size: 29px;
+            font-weight: 800;
+            letter-spacing: -.5px;
+            line-height: 1.25;
+        }
+
+        .role {
+            color: #99f6e4;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .header-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 12px;
+        }
+
+        .header-tag {
+            font-size: 10.5px;
+            font-weight: 600;
+            color: #ccfbf1;
+            border: 1px solid rgba(153, 246, 228, .35);
+            background: rgba(13, 148, 136, .18);
+            padding: 2px 8px;
+            border-radius: 20px;
+            direction: ltr;
+        }
+
+        .header-links {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4px 18px;
+            margin-top: 10px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .header-links a {
+            color: #99f6e4;
+            border-bottom: 1px dashed rgba(153, 246, 228, .45);
+            direction: ltr;
+            padding-bottom: 1px;
+        }
+
+        .header-links a.fa {
+            direction: rtl;
+        }
+
+        .header-links a:hover {
+            color: #fff;
+            border-bottom-color: #fff;
+        }
+
+        /* ---------- Layout ---------- */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 268px;
+            align-items: start;
+        }
+
+        main {
+            padding: 26px 30px 30px;
+            min-width: 0;
+        }
+
+        aside {
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border-light);
+            padding: 24px 22px;
+        }
+
+        /* ---------- Sections ---------- */
+        .section {
+            margin-bottom: 22px;
+            break-inside: avoid;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding-bottom: 7px;
+            border-bottom: 2px solid var(--border-light);
+            margin-bottom: 14px;
+        }
+
+        h2 svg {
+            width: 17px;
+            height: 17px;
+            fill: var(--accent);
+            flex-shrink: 0;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+        }
+
+        aside h2 {
+            font-size: 12.5px;
+            margin-bottom: 11px;
+        }
+
+        aside h2 svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        .summary {
+            font-size: 13px;
+            text-align: justify;
+            line-height: 1.8;
+            color: var(--text-main);
+        }
+
+        .summary strong {
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        /* ---------- Timeline ---------- */
+        .timeline {
+            border-right: 2px solid var(--border-light);
+            padding-right: 17px;
+        }
+
+        .job {
+            position: relative;
+            margin-bottom: 16px;
+            break-inside: avoid;
+        }
+
+        .job:last-child {
+            margin-bottom: 0;
+        }
+
+        .job::before {
+            content: "";
+            position: absolute;
+            top: 6px;
+            right: -24px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #fff;
+            border: 3px solid var(--accent);
+        }
+
+        .job-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .job-title {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .date {
+            font-size: 10.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: #f1f5f9;
+            border-radius: 5px;
+            padding: 1px 7px;
+            white-space: nowrap;
+        }
+
+        .org {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent-hover);
+            margin: 1px 0 5px;
+        }
+
+        .org span {
+            color: var(--text-muted);
+            font-weight: 400;
+            font-size: 10.5px;
+        }
+
+        ul.bullets {
+            list-style: none;
+        }
+
+        ul.bullets li {
+            position: relative;
+            padding-right: 13px;
+            margin-bottom: 4px;
+            font-size: 12.4px;
+            text-align: justify;
+            line-height: 1.7;
+        }
+
+        ul.bullets li::before {
+            content: "•";
+            position: absolute;
+            right: 0;
+            top: -1px;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* ---------- Projects ---------- */
+        .project {
+            border: 1px solid var(--border-light);
+            border-right: 3px solid var(--accent);
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 11px;
+            background: #fff;
+            break-inside: avoid;
+        }
+
+        .project:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        .project-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .project-title i {
+            font-style: normal;
+            font-weight: 500;
+            color: var(--text-muted);
+            font-size: 11px;
+        }
+
+        .repo {
+            font-size: 10px;
+            color: var(--accent-hover);
+            background: var(--accent-light);
+            border: 1px solid #99f6e4;
+            border-radius: 4px;
+            padding: 1px 6px;
+            white-space: nowrap;
+            direction: ltr;
+        }
+
+        .project ul.bullets li {
+            font-size: 12.1px;
+            line-height: 1.65;
+        }
+
+        .tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 7px;
+        }
+
+        .tech span {
+            font-size: 9.5px;
+            font-weight: 600;
+            color: #0f766e;
+            background: #f0fdfa;
+            border: 1px solid #ccfbf1;
+            border-radius: 4px;
+            padding: 1px 6px;
+            direction: ltr;
+        }
+
+        /* ---------- Publications ---------- */
+        .pub {
+            border-right: 2px solid var(--border-light);
+            padding-right: 12px;
+            margin-bottom: 11px;
+            break-inside: avoid;
+        }
+
+        .pub:last-child {
+            margin-bottom: 0;
+        }
+
+        .pub-title {
+            font-size: 12.4px;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .pub-meta {
+            font-size: 10.5px;
+            color: var(--text-muted);
+            margin: 2px 0 4px;
+        }
+
+        .pub-meta a {
+            color: var(--accent-hover);
+            font-weight: 600;
+            direction: ltr;
+            unicode-bidi: embed;
+        }
+
+        .pub-desc {
+            font-size: 11.9px;
+            line-height: 1.65;
+            text-align: justify;
+        }
+
+        /* ---------- Sidebar bits ---------- */
+        .contact {
+            list-style: none;
+        }
+
+        .contact li {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            font-size: 11.2px;
+            margin-bottom: 7px;
+            word-break: break-word;
+        }
+
+        .contact svg {
+            width: 13px;
+            height: 13px;
+            fill: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .contact a,
+        .contact .ltr {
+            direction: ltr;
+            unicode-bidi: embed;
+        }
+
+        .contact a:hover {
+            color: var(--accent-hover);
+        }
+
+        .skill-group {
+            margin-bottom: 12px;
+        }
+
+        .skill-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-label {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--primary-light);
+            border-right: 3px solid var(--accent);
+            padding-right: 7px;
+            margin-bottom: 6px;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .chips span {
+            font-size: 10px;
+            font-weight: 500;
+            color: var(--text-main);
+            background: #fff;
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            padding: 2px 7px;
+            direction: ltr;
+        }
+
+        .edu-item {
+            margin-bottom: 9px;
+            break-inside: avoid;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-deg {
+            font-size: 11.6px;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        .edu-school {
+            font-size: 10.6px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .cert {
+            font-size: 10.4px;
+            line-height: 1.5;
+            color: var(--text-main);
+            padding-right: 11px;
+            position: relative;
+            margin-bottom: 6px;
+        }
+
+        .cert::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 6px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .cert em {
+            font-style: normal;
+            color: var(--text-muted);
+            font-size: 9.5px;
+        }
+
+        .lang-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10.8px;
+            margin-bottom: 3px;
+        }
+
+        .lang-row b {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .lang-row span {
+            color: var(--text-muted);
+        }
+
+        .lang-bar {
+            height: 3px;
+            background: var(--border-light);
+            border-radius: 2px;
+            margin-bottom: 9px;
+            overflow: hidden;
+        }
+
+        .lang-bar i {
+            display: block;
+            height: 100%;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .print-btn {
+            position: fixed;
+            left: 18px;
+            bottom: 18px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            font-family: var(--font-family);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 6px 18px -6px rgba(13, 148, 136, .8);
+            z-index: 50;
+        }
+
+        .print-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        .disclosure {
+            padding: 9px 34px 12px;
+            border-top: 1px solid var(--border-light);
+            background: #fff;
+            font-size: 9.5px;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* Print-only blocks (hidden on screen) */
+        .print-extra {
+            display: none;
+        }
+
+        @media (max-width: 820px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            aside {
+                border-right: none;
+                border-top: 1px solid var(--border-light);
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* ---------- Print ---------- */
+        @page {
+            size: A4;
+            margin: 0.75cm 0.7cm;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                font-size: 10.5px;
+                line-height: 1.55;
+            }
+
+            .resume {
+                max-width: 100%;
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            header {
+                padding: 14px 18px 12px;
+            }
+
+            .name {
+                font-size: 23px;
+            }
+
+            .role {
+                font-size: 11.5px;
+            }
+
+            .header-tag {
+                font-size: 8.5px;
+                padding: 1px 6px;
+            }
+
+            .header-links {
+                margin-top: 7px;
+                font-size: 9px;
+                gap: 3px 14px;
+            }
+
+            .grid {
+                display: flex;
+                flex-direction: column;
+            }
+
+            aside {
+                order: -1;
+                display: grid;
+                grid-template-columns: 1.1fr 1.5fr 0.95fr;
+                gap: 0 20px;
+                border-right: none;
+                border-bottom: 2px solid var(--border-light);
+                padding: 12px 16px 14px;
+            }
+
+            aside .section {
+                margin-bottom: 0;
+            }
+
+            aside .contact {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            aside .contact li {
+                margin-bottom: 0;
+                font-size: 8.6px;
+            }
+
+            aside .skill-group {
+                margin-bottom: 6px;
+            }
+
+            aside .edu-item {
+                margin-bottom: 5px;
+            }
+
+            main {
+                order: 0;
+            }
+
+            main {
+                padding: 14px 16px 16px;
+            }
+
+            aside {
+                padding: 14px 13px;
+            }
+
+            .section {
+                margin-bottom: 13px;
+                break-inside: auto;
+            }
+
+            h2 {
+                font-size: 11.5px;
+                margin-bottom: 8px;
+                padding-bottom: 4px;
+            }
+
+            h2 svg {
+                width: 13px;
+                height: 13px;
+            }
+
+            aside h2 {
+                font-size: 10.5px;
+                margin-bottom: 7px;
+            }
+
+            .summary {
+                font-size: 10.3px;
+                line-height: 1.65;
+            }
+
+            ul.bullets li {
+                font-size: 10.1px;
+                line-height: 1.55;
+                margin-bottom: 2px;
+            }
+
+            .job {
+                margin-bottom: 9px;
+            }
+
+            .job-title {
+                font-size: 11px;
+            }
+
+            .org {
+                font-size: 10px;
+            }
+
+            .date {
+                font-size: 8.5px;
+            }
+
+            .timeline {
+                padding-right: 13px;
+            }
+
+            .job::before {
+                right: -20px;
+                width: 10px;
+                height: 10px;
+                top: 5px;
+            }
+
+            .project {
+                padding: 7px 9px;
+                margin-bottom: 7px;
+            }
+
+            .project-title {
+                font-size: 10.6px;
+            }
+
+            .project ul.bullets li {
+                font-size: 10px;
+                line-height: 1.5;
+            }
+
+            .repo {
+                font-size: 8px;
+            }
+
+            .tech span {
+                font-size: 8px;
+                padding: 0 4px;
+            }
+
+            .pub {
+                padding-right: 9px;
+                margin-bottom: 6px;
+            }
+
+            .pub-title {
+                font-size: 10.2px;
+            }
+
+            .pub-meta {
+                font-size: 8.6px;
+            }
+
+            .pub-desc {
+                font-size: 9.8px;
+                line-height: 1.5;
+            }
+
+            .skill-label {
+                font-size: 9px;
+                margin-bottom: 4px;
+            }
+
+            .chips span {
+                font-size: 8.4px;
+                padding: 1px 5px;
+            }
+
+            .edu-deg {
+                font-size: 9.7px;
+            }
+
+            .edu-school {
+                font-size: 8.9px;
+            }
+
+            .cert {
+                font-size: 8.8px;
+                margin-bottom: 4px;
+            }
+
+            .lang-row {
+                font-size: 9.2px;
+            }
+
+            .print-btn {
+                display: none;
+            }
+
+            .print-hide {
+                display: none !important;
+            }
+
+            .print-extra {
+                display: block;
+                padding: 0 16px 16px;
+            }
+
+            .print-extra h2 {
+                font-size: 11.5px;
+                margin-top: 4px;
+            }
+
+            .cert-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 22px;
+            }
+
+            .cert-grid .cert {
+                margin-bottom: 3px;
+            }
+
+            .lang-inline {
+                display: flex;
+                gap: 26px;
+                margin-top: 9px;
+                padding-top: 7px;
+                border-top: 1px solid var(--border-light);
+                font-size: 9.6px;
+                color: var(--text-muted);
+            }
+
+            .lang-inline b {
+                color: var(--text-dark);
+                font-weight: 700;
+            }
+
+            .disclosure {
+                padding: 5px 16px 7px;
+                font-size: 7.8px;
+            }
+
+            h2 {
+                break-after: avoid;
+            }
+
+            .job,
+            .project,
+            .pub,
+            .edu-item {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="resume">
+        <header>
+            <div>
+                <div class="name">امین جمالی</div>
+                <div class="role">مهندس نرم‌افزار و توسعه‌دهنده بک‌اند (Go) | سیستم‌های مالی، پرداخت و داده</div>
+                <div class="header-tags">
+                    <span class="header-tag">Go / Golang</span>
+                    <span class="header-tag">PostgreSQL</span>
+                    <span class="header-tag">Docker</span>
+                    <span class="header-tag">Financial Systems</span>
+                    <span class="header-tag">5+ Years</span>
+                </div>
+                <div class="header-links">
+                    <a class="fa" href="https://www.linkedin.com/in/amin-jamali2000/details/certifications/" target="_blank">گواهینامه‌های تأییدشده در لینکدین ↗</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid">
+            <main>
+
+                <!-- Summary -->
+                <section class="section">
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        پروفایل تخصصی
+                    </h2>
+                    <p class="summary">
+                        مهندس نرم‌افزار با بیش از <strong>۵ سال تجربه</strong> در توسعه و نگهداری سیستم‌های نرم‌افزاری و زیرساخت،
+                        با تمرکز بر <strong>توسعه بک‌اند و سرویس‌های داده‌محور با Go</strong>. دانش‌آموخته
+                        <strong>کارشناسی مدیریت مالی</strong> و دارای تجربه عملی حسابداری و تحلیل داده‌های مالی؛ ترکیبی که
+                        امکان درک دقیق دامنه کسب‌وکار مالی (تراکنش، کیف پول، تسویه، مالیات و گزارش‌گیری) را در کنار
+                        مهندسی نرم‌افزار فراهم می‌کند. تجربه در طراحی API، مدل‌سازی داده،
+                        <strong>بهینه‌سازی کوئری PostgreSQL</strong>، کانتینری‌سازی با Docker و راه‌اندازی CI/CD.
+                        علاقه‌مند به ساخت سرویس‌های مالی امن، دقیق و مقیاس‌پذیر با پایش‌پذیری بالا.
+                    </p>
+                </section>
+
+                <!-- Experience -->
+                <section class="section">
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+                        تجربه کاری
+                    </h2>
+                    <div class="timeline">
+
+                        <div class="job">
+                            <div class="job-head">
+                                <span class="job-title">کارشناس فناوری اطلاعات، اتوماسیون و پایگاه داده</span>
+                                <span class="date">خرداد ۱۴۰۰ — اکنون</span>
+                            </div>
+                            <div class="org">شرکت بهار تجارت (Bahar Trade) <span>| تمام‌وقت</span></div>
+                            <ul class="bullets">
+                                <li><strong>پایگاه داده:</strong> مهندسی، ایندکس‌گذاری و بهینه‌سازی کوئری‌های سنگین
+                                    PostgreSQL و طراحی اسکیمای داده برای سامانه B2B؛ کاهش محسوس زمان پاسخ‌دهی
+                                    گزارش‌های تجاری.</li>
+                                <li><strong>اتوماسیون:</strong> جایگزینی فرآیندهای دستی و تکراری با اسکریپت‌های Bash و
+                                    Python و زمان‌بندی وظایف؛ کاهش خطای انسانی در عملیات داده.</li>
+                                <li><strong>پایداری سرویس:</strong> پایش، پشتیبان‌گیری و بازیابی (Backup/Recovery)
+                                    زیرساخت شبکه و سرورهای Linux و مستندسازی فرآیندهای عملیاتی.</li>
+                            </ul>
+                        </div>
+
+                        <div class="job">
+                            <div class="job-head">
+                                <span class="job-title">توسعه‌دهنده نرم‌افزار و متخصص فنی</span>
+                                <span class="date">دی ۱۴۰۴ — اکنون</span>
+                            </div>
+                            <div class="org">فریلنسر <span>| پاره‌وقت</span></div>
+                            <ul class="bullets">
+                                <li>طراحی و پیاده‌سازی سرویس‌های بک‌اند، API و پلتفرم‌های وب مقیاس‌پذیر با معماری تمیز و
+                                    تمرکز بر صحت داده و تجربه کاربری.</li>
+                                <li>استقرار کانتینری با Docker، خط لوله CI/CD و بهینه‌سازی عملکرد (Performance) و
+                                    سئوی فنی محصولات.</li>
+                            </ul>
+                        </div>
+
+                        <div class="job">
+                            <div class="job-head">
+                                <span class="job-title">تحلیلگر بازارهای مالی و معامله‌گر الگوریتمی</span>
+                                <span class="date">۱۳۹۶ — ۱۳۹۷</span>
+                            </div>
+                            <div class="org">خوداشتغال <span>| پاره‌وقت</span></div>
+                            <ul class="bullets">
+                                <li>تحلیل داده‌های مالی با Python و Pandas، بک‌تست استراتژی‌ها و پیاده‌سازی
+                                    الگوریتم‌های معاملاتی روی داده‌های سری زمانی.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Go projects -->
+                <section class="section">
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                        پروژه‌های Go (نمونه‌کارهای بک‌اند)
+                    </h2>
+
+                    <div class="project">
+                        <div class="project-head">
+                            <span class="project-title">استخراجگر قوانین مالیاتی ایران <i>— Go</i></span>
+                            <a class="repo" href="https://github.com/BIGboss248/tax-law-extractor">tax-law-extractor</a>
+                        </div>
+                        <ul class="bullets">
+                            <li>خزش همزمان صفحات قوانین با <strong>Colly v2</strong>، کشف صفحه‌بندی و وضعیت
+                                قابل‌ازسرگیری در CSV برای تحمل خطا و اجرای مجدد بدون از دست رفتن پیشرفت.</li>
+                            <li>استخراج و پاک‌سازی متن قوانین از JSON جاسازی‌شده در HTML با <strong>goquery</strong> و
+                                Regex؛ خروجی Markdown ساختاریافته برای مصرف در LLM / RAG.</li>
+                            <li>همزمانی امن با <code>sync.Mutex</code> و <code>sync.Map</code> برای نوشتن بدون تعارض در
+                                فایل خروجی و وضعیت پردازش.</li>
+                        </ul>
+                        <div class="tech"><span>Go 1.26</span><span>Colly v2</span><span>goquery</span><span>Concurrency</span><span>CSV</span><span>Markdown</span></div>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-head">
+                            <span class="project-title">سرویس دامنه مالی با Go و MongoDB <i>— Go</i></span>
+                            <a class="repo" href="https://github.com/BIGboss248/golang-practice">golang-practice</a>
+                        </div>
+                        <ul class="bullets">
+                            <li>مدل‌سازی دامنه مالی (BankAccount، Transaction، Category) و لایه اتصال
+                                <strong>MongoDB</strong> با درایور رسمی v2 و اعتبارسنجی پارامترها.</li>
+                            <li>لاگ ساختیافته با <strong>zerolog</strong> (سطح‌بندی از متغیر محیطی، خروجی هم‌زمان کنسول و
+                                فایل، اندازه‌گیری زمان اجرا) و بیلد چندمرحله‌ای <strong>Docker</strong> با باینری استاتیک.</li>
+                            <li>CI با GitHub Actions، Docker Compose و رعایت کیفیت کد با linter و pre-commit.</li>
+                        </ul>
+                        <div class="tech"><span>Go 1.25</span><span>MongoDB Driver v2</span><span>zerolog</span><span>Docker</span><span>Compose</span><span>GitHub Actions</span></div>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-head">
+                            <span class="project-title">API گراف‌کیوال با gqlgen <i>— Go</i></span>
+                            <a class="repo" href="https://github.com/BIGboss248/golang-graphql-practice">golang-graphql-practice</a>
+                        </div>
+                        <ul class="bullets">
+                            <li>سرویس HTTP با رویکرد <strong>schema-first</strong>، تولید کد و پیاده‌سازی Resolverها.</li>
+                            <li>کش کوئری <strong>LRU</strong> و Automatic Persisted Query برای کاهش بار پردازش و
+                                پاسخ‌دهی سریع‌تر به کلاینت‌ها.</li>
+                        </ul>
+                        <div class="tech"><span>Go</span><span>gqlgen</span><span>GraphQL</span><span>LRU Cache</span><span>net/http</span></div>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-head">
+                            <span class="project-title">کتابخانه لاگ و استخراجگر نرخ ارز <i>— Go</i></span>
+                            <a class="repo" href="https://github.com/BIGboss248/golangScripts">golangScripts</a>
+                        </div>
+                        <ul class="bullets">
+                            <li>کتابخانه لاگ قابل استفاده مجدد بر پایه zerolog با سطوح استاندارد و رنگ‌بندی ANSI برای
+                                ابزارهای خط فرمان.</li>
+                            <li>استخراج نرخ ارز از منابع آنلاین با Colly و XPath و مدیریت خطا در درخواست‌ها
+                                (<a href="https://github.com/BIGboss248/golang_currency_extracter" style="color:var(--accent-hover);font-weight:600;">golang_currency_extracter</a>).</li>
+                        </ul>
+                        <div class="tech"><span>Go</span><span>zerolog</span><span>ANSI</span><span>Colly</span><span>XPath</span></div>
+                    </div>
+                </section>
+
+                <!-- Publications -->
+                <section class="section">
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                        پژوهش‌های داده و سیستم‌های مالی
+                    </h2>
+
+                    <div class="pub">
+                        <div class="pub-title">ارزیابی تأثیر اتوماسیون زیرساخت IT و بهینه‌سازی فنی وب بر عملکرد عملیاتی و تجربه کاربری در زنجیره تأمین معدن و فولاد</div>
+                        <div class="pub-meta">Management Strategies and Engineering Sciences (MSES) · ۲۰۲۵ ·
+                            <a href="https://doi.org/10.61838/msesj.477">DOI: 10.61838/msesj.477</a></div>
+                        <div class="pub-desc">اتوماسیون سرور با Bash، مهندسی و ایندکس‌گذاری کوئری‌های سنگین
+                            <strong>PostgreSQL</strong>، مهاجرت به معماری SSR و سئوی فنی؛ تحلیل آماری با
+                            Paired-samples t-test و افزایش نرخ تبدیل B2B. (نویسنده مسئول)</div>
+                    </div>
+
+                    <div class="pub">
+                        <div class="pub-title">تحلیل احساسات اخبار اقتصادی با ParsBERT و پیش‌بینی نوسانات قیمت بورس کالای ایران</div>
+                        <div class="pub-meta">فصلنامه حسابداری، امور مالی و هوش محاسباتی (AFCI) · ۲۰۲۵ ·
+                            <a href="https://doi.org/10.61838/jafci.485">DOI: 10.61838/jafci.485</a></div>
+                        <div class="pub-desc">پردازش <strong>۴۵٬۸۳۶ خبر اقتصادی</strong> و ادغام با داده‌های سری زمانی؛
+                            کاهش ۲۷.۶٪ خطای پیش‌بینی (RMSE)، دقت جهت‌گیری ۷۲.۶٪ و نسبت شارپ ۱.۷۶. (نویسنده مسئول)</div>
+                    </div>
+
+                    <div class="pub">
+                        <div class="pub-title">ارزیابی مدل‌های یادگیری ماشین و یادگیری تقویتی عمیق در پیش‌بینی نوسانات قیمت فولاد و بازار ارز</div>
+                        <div class="pub-meta">Business, Marketing, and Finance Open (BMF OPEN) · ۲۰۲۵ ·
+                            <a href="https://doi.org/10.61838/bmfopen.545">DOI: 10.61838/bmfopen.545</a></div>
+                        <div class="pub-desc">مقایسه Random Forest، XGBoost، LSTM و Deep Q-Network؛ دقت جهت‌گیری
+                            ۷۰.۸٪ با LSTM و بازده سالانه ۲۸.۹٪ با نسبت شارپ ۱.۸۶. (نویسنده مسئول)</div>
+                    </div>
+                </section>
+
+            </main>
+
+            <aside>
+                <!-- Links -->
+                <section class="section">
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        تماس و پیوندها
+                    </h2>
+                    <ul class="contact">
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            <a href="mailto:aminjamali79@gmail.com">aminjamali79@gmail.com</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.33-.14 2 0 .67.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56-.6 1.11-1.06 2.31-1.38 3.56zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.34-.16-2 0-.66.07-1.34.16-2h4.68c.09.66.16 1.34.16 2 0 .66-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.33.14-2 0-.67-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+                            <a href="https://meetjamali.com" target="_blank">meetjamali.com</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                            <a href="https://linkedin.com/in/amin-jamali2000" target="_blank">linkedin.com/in/amin-jamali2000</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                            <a href="https://github.com/BIGboss248" target="_blank">github.com/BIGboss248</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2z"/></svg>
+                            <a href="https://orcid.org/0009-0004-9921-7273" target="_blank">orcid.org/0009-0004-9921-7273</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Skills -->
+                <section class="section">
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.3C.5 6.7.9 9.8 2.9 11.8c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.6z"/></svg>
+                        مهارت‌های فنی
+                    </h2>
+
+                    <div class="skill-group">
+                        <div class="skill-label">زبان‌ها و بک‌اند</div>
+                        <div class="chips">
+                            <span>Go (Golang)</span><span>Python</span><span>TypeScript</span><span>SQL</span><span>Bash</span><span>REST</span><span>GraphQL</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-label">پایگاه داده</div>
+                        <div class="chips">
+                            <span>PostgreSQL</span><span>MongoDB</span><span>Schema Design</span><span>Indexing</span><span>Query Tuning</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-label">زیرساخت و کیفیت</div>
+                        <div class="chips">
+                            <span>Docker</span><span>Compose</span><span>Linux</span><span>GitHub Actions</span><span>CI/CD</span><span>Monitoring</span><span>golangci-lint</span><span>Git</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-label">دامنه مالی و داده</div>
+                        <div class="chips">
+                            <span>Financial Data</span><span>Accounting</span><span>BI</span><span>Pandas</span><span>Tableau</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section class="section">
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+                        تحصیلات
+                    </h2>
+
+                    <div class="edu-item">
+                        <div class="edu-deg">کارشناسی مدیریت مالی</div>
+                        <div class="edu-school">دانشگاه آزاد اسلامی اصفهان (خوراسگان)</div>
+                    </div>
+
+                    <div class="edu-item">
+                        <div class="edu-deg">کارشناسی مهندسی حرفه‌ای کامپیوتر نرم‌افزار</div>
+                        <div class="edu-school">دانشگاه آزاد اسلامی اصفهان (خوراسگان)</div>
+                    </div>
+
+                    <div class="edu-item">
+                        <div class="edu-deg">دیپلم علوم ریاضی و فیزیک</div>
+                        <div class="edu-school">سمپاد — دبیرستان شهید اژه‌ای اصفهان</div>
+                    </div>
+                </section>
+
+                <!-- Certifications -->
+                <section class="section print-hide">
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-6V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                        گواهینامه‌های مرتبط
+                    </h2>
+
+                    <div class="cert">Introduction to Containers w/ Docker, Kubernetes &amp; OpenShift <em>— IBM</em></div>
+                    <div class="cert">IBM DevOps, Cloud, and Agile Foundations <em>— IBM</em></div>
+                    <div class="cert">Relational Database Administration (DBA) <em>— IBM</em></div>
+                    <div class="cert">Introduction to Relational Databases (RDBMS) <em>— IBM</em></div>
+                    <div class="cert">Learning REST APIs <em>— LinkedIn</em></div>
+                    <div class="cert">AWS Cloud Quest: Solutions Architect <em>— AWS</em></div>
+                    <div class="cert">AWS Cloud Quest: Serverless Developer <em>— AWS</em></div>
+                    <div class="cert">Google Data Analytics Specialization <em>— Google</em></div>
+                </section>
+
+                <!-- Languages -->
+                <section class="section print-hide">
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2z"/></svg>
+                        زبان‌ها
+                    </h2>
+                    <div class="lang-row"><b>فارسی</b><span>زبان مادری</span></div>
+                    <div class="lang-bar"><i style="width:100%"></i></div>
+                    <div class="lang-row"><b>انگلیسی</b><span>حرفه‌ای</span></div>
+                    <div class="lang-bar"><i style="width:92%"></i></div>
+                    <div class="lang-row"><b>آلمانی</b><span>مقدماتی</span></div>
+                    <div class="lang-bar"><i style="width:25%"></i></div>
+                </section>
+
+            </aside>
+        </div>
+
+        <!-- Print-only: certifications & languages (full width) -->
+        <div class="print-extra">
+            <section>
+                <h2>
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-6V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    گواهینامه‌های مرتبط
+                </h2>
+                <div class="cert-grid">
+                    <div class="cert">Introduction to Containers w/ Docker, Kubernetes &amp; OpenShift <em>— IBM</em></div>
+                    <div class="cert">IBM DevOps, Cloud, and Agile Foundations <em>— IBM</em></div>
+                    <div class="cert">Relational Database Administration (DBA) <em>— IBM</em></div>
+                    <div class="cert">Introduction to Relational Databases (RDBMS) <em>— IBM</em></div>
+                    <div class="cert">Learning REST APIs <em>— LinkedIn</em></div>
+                    <div class="cert">AWS Cloud Quest: Solutions Architect <em>— AWS</em></div>
+                    <div class="cert">AWS Cloud Quest: Serverless Developer <em>— AWS</em></div>
+                    <div class="cert">Google Data Analytics Specialization <em>— Google</em></div>
+                </div>
+                <div class="lang-inline">
+                    <span><b>فارسی:</b> زبان مادری</span>
+                    <span><b>انگلیسی:</b> حرفه‌ای</span>
+                    <span><b>آلمانی:</b> مقدماتی</span>
+                </div>
+            </section>
+        </div>
+
+        <footer class="disclosure">این فایل با کمک ابزارهای هوش مصنوعی تهیه و تنظیم شده است.</footer>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">چاپ / خروجی PDF</button>
+
+</body>
+
+</html>
